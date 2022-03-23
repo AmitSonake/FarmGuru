@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.language.LanguageSelectionActivity">
+
+    <ProgressBar
+        android:foregroundGravity="center_horizontal|center"
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        style="?android:attr/progressBarStyle"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+    <RelativeLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/chooseLanguageLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif"
+            android:text="Choose your language"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonEnglish"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/chooseLanguageLabel"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="sans-serif"
+            android:text="ENGLISH"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonKannada"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/chooseLanguageLabel"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/buttonEnglish"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="sans-serif"
+            android:text="KANNADA"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonKannada"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="sans-serif"
+            android:text="Submit"
+            android:textSize="24sp"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+</RelativeLayout>

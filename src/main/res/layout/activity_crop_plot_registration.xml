@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".plotregistration.CropPlotRegistrationActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/list_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.FarmGuru.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.FarmGuru.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+        <ProgressBar
+            android:foregroundGravity="center_horizontal|center"
+            android:id="@+id/progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            style="?android:attr/progressBarStyle"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:visibility="visible"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:paddingTop="80dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crop Variety:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_border">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/corpVarietySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+
+                    android:gravity="center_horizontal"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Soil Type:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/square_border">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/soilTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:minHeight="48dp"
+                android:layout_marginStart="10dp"
+                android:text="Crop Variety"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plantation Year:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/square_border">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/plantationYearSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:minHeight="48dp"
+                android:layout_marginStart="10dp"
+                android:text="Plantation year"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="is your crop pruned?:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_border"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/prunedRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:minHeight="48dp"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:text="Crop Variety">
+
+                    <RadioButton
+                        android:id="@+id/radioPruneYes"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/radioPruneNo"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Irigation Source:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+        <RelativeLayout
+            android:id="@+id/enterSourceId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/square_border"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/inputSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
+                android:hint="Select Source"
+                android:minHeight="48dp" />
+            <ImageView
+                android:id="@+id/imageButtonInsert"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:hint="Select Source"
+                android:layout_toRightOf="@id/inputSource"
+                android:src="@android:drawable/ic_menu_add"
+                android:minHeight="48dp"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginLeft="20dp"
+                android:background="@null"/>
+        </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Garden Method:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_border"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/gardenMethodRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:minHeight="48dp"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:text="Crop Variety">
+
+                    <RadioButton
+                        android:id="@+id/radioMandap"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mandap" />
+
+                    <RadioButton
+                        android:id="@+id/radioY"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Y" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crop Distance:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_border"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/cropDistanceArea"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@null"
+                    android:hint="Crop Distance"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:text="X"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    />
+
+                <EditText
+                    android:id="@+id/cropDistanceLength"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@null"
+                    android:hint="Crop Distance"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Purpose:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_border"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/purposeRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:minHeight="48dp"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioLocal"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Local" />
+
+                    <RadioButton
+                        android:id="@+id/radioExport"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Export" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Area(Acres):"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:background="@drawable/square_border">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Total Area(Acres)"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:background="@null"
+                android:layout_margin="10dp"
+                />
+        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Previous year Problem:"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:background="@drawable/square_border">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Enter Previous Year Problem:"
+                android:layout_margin="10dp"
+                android:minHeight="48dp" />
+        </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearlayout"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:text="Submit" />
+        </LinearLayout>
+
+    </RelativeLayout>
+<!--</ScrollView>-->
+
+</ScrollView>
