@@ -83,4 +83,6 @@ class MainActivity : AppCompatActivity() {
         conf.setLocale(Locale(languageCode.toString().toLowerCase())) // API 17+ only.
         res.updateConfiguration(conf, dm)
     }
+
+
 }

@@ -1,7 +1,6 @@
 package com.farms.farmguru.ui.home
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,36 +10,19 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.farms.farmguru.ComplaintRegistrationActivity
 import com.farms.farmguru.R
 import com.farms.farmguru.adapters.HomeSliderImageAdapter
-import com.farms.farmguru.adapters.NewsListingAdapter
-import com.farms.farmguru.adapters.RecyclerViewAdapter
 import com.farms.farmguru.databinding.FragmentDashbordBinding
-import com.farms.farmguru.databinding.FragmentHomeBinding
 import com.farms.farmguru.model.NewsData
-import com.farms.farmguru.model.NewsListing
 import com.farms.farmguru.network.ApiClient
 import com.farms.farmguru.network.ApiServiceInterface
-import com.farms.farmguru.plotregistration.CropPlotRegistrationActivity
-import com.farms.farmguru.schedule.MyPlotScheduleActivity
-import com.farms.farmguru.schedule.MyScheduleActivity
 import com.farms.farmguru.schedule.PlotListingActivity
-import com.farms.farmguru.ui.mydiary.DiaryNoteActivity
+import com.farms.farmguru.ui.dealers.DealerSearchActivity
 import com.farms.farmguru.ui.myplots.MyPlotActivity
 import com.farms.farmguru.ui.myplots.MyPlotListingActivity
-import com.farms.farmguru.ui.weather.WeatherActivity
-import com.farms.farmguru.ui.weather.WeatherForecastActivity
-import com.google.gson.Gson
+import com.farms.farmguru.ui.questions.QuestionHomeActivity
+import com.farms.farmguru.ui.splash.TestActivity
 import com.smarteist.autoimageslider.SliderView
-import okhttp3.ResponseBody
-
-import retrofit2.Call
-import retrofit2.Response
-import retrofit2.Callback
 
 
 class HomeFragment : Fragment() {
@@ -96,10 +78,10 @@ class HomeFragment : Fragment() {
             startActivity(Intent(context, PlotListingActivity::class.java))
         }
         binding.myDiaryButton.setOnClickListener {
-            startActivity(Intent(context,DiaryNoteActivity::class.java))
+            //startActivity(Intent(context,DiaryNoteActivity::class.java))
         }
         binding.weatherReport.setOnClickListener {
-            startActivity(Intent(context,WeatherForecastActivity::class.java))
+            //startActivity(Intent(context,WeatherForecastActivity::class.java))
         }
         binding.webinarButton.setOnClickListener {
         //    startActivity(Intent(context,WeatherActivity::class.java))
@@ -111,10 +93,29 @@ class HomeFragment : Fragment() {
           //  startActivity(Intent(context,WeatherActivity::class.java))
         }
         binding.askQuestionButton.setOnClickListener {
-            startActivity(Intent(context,ComplaintRegistrationActivity::class.java))
+            startActivity(Intent(context,QuestionHomeActivity::class.java))
         }
         binding.myPlotDetailButton.setOnClickListener {
             startActivity(Intent(context,MyPlotListingActivity::class.java))
+        }
+        binding.agreeDealerButton.setOnClickListener {
+            startActivity(Intent(context, TestActivity::class.java))
+
+          /*  val payUPaymentParams = PayUPaymentParams.Builder()
+                .setAmount("1.0")
+            .setIsProduction(false)
+
+            .setKey("gtKFFx")
+            .setProductInfo("Test")
+            .setPhone("9890400545")
+            .setTransactionId("1111")
+            .setFirstName("Test")
+            .setEmail("sanjivinikrushi@gmail.com")
+            .setSurl("https://www.google.com")
+            .setFurl("https://www.yahoo.com")
+            .setUserCredential("")
+            //Optional, can contain any additional PG params
+            .build()*/
         }
 
         return root

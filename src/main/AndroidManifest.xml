@@ -6,40 +6,45 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/krushi_logos"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/krushi_logos"
         android:supportsRtl="true"
         android:theme="@style/Theme.FarmGuru"
         android:usesCleartextTraffic="true">
+        <!--<activity
+            android:name=".ui.dealers.DealerSearchActivity"
+            android:exported="true" />-->
+        <activity
+            android:name=".ui.questions.QuestionHomeActivity"
+            android:exported="true" />
+
         <provider
-            android:authorities="com.farms.farmguru.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.farms.farmguru.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
         <activity
             android:name=".ComplaintRegistrationActivity"
             android:exported="true" />
         <activity
             android:name=".schedule.MyScheduleActivity"
             android:exported="true"
-            android:label="@string/schedule"
-            />
-
+            android:label="@string/schedule" />
         <activity
             android:name=".utilities.AskQuestionActivity"
-            android:exported="true"
-            />
+            android:exported="true" />
         <activity
             android:name=".schedule.MyPlotScheduleActivity"
             android:exported="true" />
@@ -47,16 +52,19 @@
             android:name=".schedule.PlotListingActivity"
             android:exported="true" />
         <activity
+            android:name=".ui.questions.MyQuestionListingActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.mydiary.DiaryNoteActivity"
             android:exported="true"
-            android:theme="@style/Theme.FarmGuru.NoActionBar"/>
+            android:theme="@style/Theme.FarmGuru.NoActionBar" />
         <activity
             android:name=".login.LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.FarmGuru.NoActionBar" />
         <activity
-            android:name="com.farms.farmguru.ui.signup.SignupActivity"
+            android:name=".ui.signup.SignupActivity"
             android:exported="true" />
         <activity
             android:name=".ui.language.LanguageSelectionActivity"
@@ -64,16 +72,7 @@
         <activity
             android:name=".plotregistration.CropPlotRegistrationActivity"
             android:exported="true"
-            android:theme="@style/Theme.FarmGuru.NoActionBar"
-            />
-        <!--
- <activity
-            android:name=".plotregistration.CropPlotRegistration"
-            android:exported="true"
-            andr
-            oid:label="@string/title_activity_crop_plot_registration"
             android:theme="@style/Theme.FarmGuru.NoActionBar" />
-        -->
         <activity
             android:name=".ui.myplots.MyPlotActivity"
             android:exported="true" />
@@ -91,18 +90,24 @@
         <activity
             android:name=".ui.splash.TestActivity"
             android:exported="true"
-            android:theme="@style/Theme.FarmGuru.NoActionBar"
-           />
+            android:theme="@style/Theme.FarmGuru.NoActionBar" />
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"
+                    />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.razorpay.Apikey"
+            android:value="rzp_test_cPeCKKKGVVndiE"/>
+        <meta-data
+            android:name="com.google.gms.wallet.api.enabled"
+            android:value="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

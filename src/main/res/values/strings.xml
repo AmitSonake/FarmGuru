@@ -99,6 +99,16 @@
     <string name="record_play">Play Voice</string>
     <string name="record_stop">Stop Recording</string>
     <string name="schedule_date">Schedule Date</string>
+    <string name="request_title">Question Title:</string>
+    <string name="question_date">Requested Date:</string>
+    <string name="question_assigned">Assigned To:</string>
+    <string name="question_status">Request Status:</string>
+    <string name="raise_request">Ask Question</string>
+    <string name="view_questions_list">View Status</string>
+    <string name="ques_title">You found any problem or disesge information for your farm you can click on Ask Question to register problem</string>
+    <string name="status_title">For tracking status of your question, please click on below View Status button</string>
+    <string name="notification">Notification</string>
+    <string name="select_state">Select Your State :</string>
 
 
 </resources>

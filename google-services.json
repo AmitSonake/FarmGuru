@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "975065005023",
+    "project_id": "farmguru-72bb2",
+    "storage_bucket": "farmguru-72bb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975065005023:android:81856468be0dfd44b9226a",
+        "android_client_info": {
+          "package_name": "com.farms.farmguru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975065005023-87sb71sot0v0v43e0d6f01hmcg92fo20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJNr-o_7uQAAfYwcSKUvF6wCYX26yRpsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975065005023-87sb71sot0v0v43e0d6f01hmcg92fo20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

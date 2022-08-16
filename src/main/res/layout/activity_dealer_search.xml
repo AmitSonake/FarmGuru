@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/list_color"
+    tools:context=".ui.dealers.DealerSearchActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="50dp">
+
+    <LinearLayout
+        android:id="@+id/linearStateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="100dp"
+            android:textColor="@color/black"
+            android:text="@string/select_state" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:minWidth="100dp"
+            tools:ignore="SpeakableTextPresentCheck"></androidx.appcompat.widget.AppCompatSpinner>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/linearStateLayout"
+        android:id="@+id/linearDistrictLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:minWidth="100dp"
+            android:textColor="@color/black"
+            android:text="@string/select_district" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:minWidth="100dp"
+            tools:ignore="SpeakableTextPresentCheck"></androidx.appcompat.widget.AppCompatSpinner>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/linearDistrictLayout"
+        android:id="@+id/linearTaluqLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:minWidth="100dp"
+            android:textColor="@color/black"
+            android:text="@string/select_taluqa" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:minWidth="100dp"
+            tools:ignore="SpeakableTextPresentCheck"></androidx.appcompat.widget.AppCompatSpinner>
+
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/payButton"
+        android:text="Make Payment"
+        android:textColor="@color/black"/>
+</RelativeLayout>
+</RelativeLayout>

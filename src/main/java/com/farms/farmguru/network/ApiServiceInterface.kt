@@ -45,6 +45,17 @@ interface ApiServiceInterface {
                   ): Call<ResponseBody>
 
     @FormUrlEncoded
+    @POST("api/Question")
+    fun registerQuestion(@Field("QueId") QueId : Int,
+                     @Field("UserId") UserId : String,
+                     @Field( "QueDateTime") QueDateTime : String,
+                     @Field( "QueText") QueText : String,
+                     @Field( "ImageUrl") ImageUrl : String,
+                     @Field( "VoiceUrl") VoiceUrl : String,
+                     @Field(  "AssignedTo") AssignedTo : String,
+                     @Field("Status") Status : String): Call<ResponseBody>
+
+    @FormUrlEncoded
     @POST("api/PlotRegistration")
     fun registerPlot(@Field("RegId") RegId : Int,
                      @Field("UserId") UserId : String,
@@ -68,6 +79,9 @@ interface ApiServiceInterface {
 
     @GET("api/GetUserPlots")
     fun getPlotRegistered(): Call<ResponseBody>
+
+    @GET("api/GetUserQues")
+    fun getRegisteredQuestions(): Call<ResponseBody>
 }
 
 
