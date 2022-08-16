@@ -72,6 +72,8 @@ class ComplaintRegistrationActivity : AppCompatActivity() {
     private var mApiService: ApiServiceInterface?= null
     private var currentDateTime:String? = null
 
+    var isAllFieldFilled :Boolean =false
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -156,7 +158,7 @@ class ComplaintRegistrationActivity : AppCompatActivity() {
         binding.submitButton.setOnClickListener {
             val localtime = LocalDateTime.now().toString()
             currentDateTime =localtime
-            val isAllFieldFilled :Boolean =checkFieldValidation()
+            isAllFieldFilled =checkFieldValidation()
             println("Current Date = $currentDateTime")
             var networkStatus:Boolean= CheckInternetConnection.checkForInternet(this)
             if(networkStatus){
