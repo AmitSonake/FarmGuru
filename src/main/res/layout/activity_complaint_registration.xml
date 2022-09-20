@@ -12,10 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        style="?android:attr/progressBarStyle"
+        android:indeterminateDrawable="@drawable/custom_rotate"
         android:layout_marginTop="?attr/actionBarSize"
         android:visibility="gone"
         android:layout_gravity="center"/>
+
     <RelativeLayout
         android:id="@+id/linearTop"
         android:layout_width="match_parent"
@@ -80,6 +81,7 @@
                 android:padding="5dp"
                 android:text="Choose"
                 android:textColor="@android:color/white" />
+
             <Button
                 android:id="@+id/btnRemove"
                 android:layout_width="0dp"
@@ -156,19 +158,19 @@
         <RelativeLayout
             android:id="@+id/relative"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linearButtonLayout"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-
+            android:minHeight="150dp"
             android:background="@drawable/rounded_border">
 
             <EditText
                 android:id="@+id/commentsText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"

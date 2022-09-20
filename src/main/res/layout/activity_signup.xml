@@ -4,7 +4,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.signup.SignupActivity">
+        tools:context=".ui.signup.SignupActivity"
+        android:background="#ffffff">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,11 +13,20 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dip"
+            android:layout_below="@id/appbar_layout_title"
+            android:background="@drawable/krushi_logos"
+            android:paddingBottom="50dip"
+            >
 
+        </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
                 <!-- ALL THE REGISTER -->
@@ -29,7 +39,7 @@
                     android:paddingRight="@dimen/activity_horizontal_margin"
                     android:paddingTop="@dimen/activity_vertical_margin"
                     android:layout_marginTop="50dp"
-
+                    android:background="#ffffff"
                     android:orientation="vertical">
 
                     <!-- ENTER NAME -->
@@ -38,6 +48,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
+                        android:layout_marginTop="100dp"
                         android:hint="@string/name"/>
 
                     <!-- ENTER EMAIL -->
@@ -69,6 +80,8 @@
                             android:id="@+id/btRegistrarse"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/purple_500"
+                            android:textSize="18sp"
                             android:text="@string/btRegister"/>
 
 
@@ -80,9 +93,10 @@
                             android:layout_height="wrap_content"
                             android:background="@null"
                             android:text="@string/btn_link_to_login"
+                            android:textColor="@color/white"
                             android:textAllCaps="false"
-                            android:textSize="15dp"
-                            android:textColor="#3f51b5"/>
+                            android:textSize="18sp"
+                            />
 
 
 

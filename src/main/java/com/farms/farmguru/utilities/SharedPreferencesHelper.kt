@@ -15,6 +15,8 @@ class SharedPreferencesHelper {
         private const val USER_TOKEN = "Token"
         private const val USER_NAME = "Username"
         private const val USER_ACTIVE = "Useractive"
+        private const val USER_LANGUAGE = "user_language"
+        private const val SELECTED_LANGUAGE = "selected_language"
 
         @Volatile
         private var instance: SharedPreferencesHelper? = null
@@ -53,6 +55,20 @@ class SharedPreferencesHelper {
         }
 
     }
+    fun saveUserLanguage(languageID: String?) {
+        prefs?.edit(commit = true){
+            putString(USER_LANGUAGE, languageID)
+        }
+
+    }
+    fun saveSelectedLanguage(languageID: String?) {
+        prefs?.edit(commit = true){
+            putString(SELECTED_LANGUAGE, languageID)
+        }
+
+    }
+    fun getSelectedLanguage()=prefs?.getString(SELECTED_LANGUAGE,null)
+    fun getUserLanguage()=prefs?.getString(USER_LANGUAGE,null)
     fun getToken()=prefs?.getString(USER_TOKEN,null)
     fun getUserName()=prefs?.getString(USER_NAME,null)
     fun getUpdateTime()=prefs?.getLong(PREF_TIME,0)

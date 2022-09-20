@@ -45,6 +45,10 @@ data class GardenMethod(
  val GardenMethodName: String
 )
 
+data class Language(
+ val LangId:String,
+ val LanguageName:String
+)
 
 data class PlotListing (
  val RegId : Int,

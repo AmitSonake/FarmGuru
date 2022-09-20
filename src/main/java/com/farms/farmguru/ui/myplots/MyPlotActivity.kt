@@ -24,7 +24,9 @@ class MyPlotActivity : AppCompatActivity() {
     private var mApiService: ApiServiceInterface?= null
     private val cropList = ArrayList<CropResponse>()
     private var cropParsedList = ArrayList<CropResponse>()
-    var languageCode:String? ="kn"
+    var languageCode:String? ="EN"
+    var selectedLanguageId :Int =1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +37,18 @@ class MyPlotActivity : AppCompatActivity() {
         if (bundle!=null){
             val message = bundle.getString("LanguageCode") // 1
             languageCode=message
+            SharedPreferencesHelper.invoke(this).getSelectedLanguage()?.let {
+                com.farms.farmguru.utilities.LocaleHelper.setLocale(this!!,
+                    it
+                )
+            }
             println("language Code = $message")
-
+            var langaugeId: String? =SharedPreferencesHelper.invoke(this).getUserLanguage()
+            selectedLanguageId = Integer.parseInt(langaugeId)
         }
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(ApiServiceInterface::class.java)
         //getCropList()
+        println("token =${SharedPreferencesHelper.invoke(this).getToken()}")
         var networkStatus:Boolean= CheckInternetConnection.checkForInternet(this)
         if(networkStatus){
             getCropList()
@@ -67,8 +76,9 @@ class MyPlotActivity : AppCompatActivity() {
 
     private fun getCropList(){
         binding.progressbar.visibility = View.VISIBLE
-            mApiService!!.getCrops().enqueue(object:
-                Callback<ResponseBody> {
+            //mApiService!!.getCrops().enqueue(object:
+        mApiService!!.GetCropsByLangId(selectedLanguageId).enqueue(object:
+            Callback<ResponseBody> {
                 override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                     if(response.code()==200||response.code()==201|| response.code()==202){
                         val stringResponse = response.body()?.string()

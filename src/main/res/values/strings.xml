@@ -3,7 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_subtitle">sanjivinikrushi@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -34,6 +34,7 @@
     <string name="passWord">password</string>
     <string name="btRegister">regiter</string>
     <string name="btn_link_to_login">Login</string>
+    <string name="label_signup">Sign Up </string>
     <string name="phoneno">Mobile No</string>
     <string name="farmer_name">Farmers Name:</string>
     <string name="farmer_address">Farmers Address:</string>
@@ -87,7 +88,7 @@
     <string name="cancel">Cancel</string>
     <string name="diary_diseage">Diseage Information</string>
     <string name="save_diary">Save</string>
-    <string name="schedule_day">Day:</string>
+    <string name="schedule_day">Schedule Day:</string>
     <string name="after_pronningdays">Before Pronning Days:</string>
     <string name="medicine_details">Medicine Details:</string>
     <string name="active_ingredients">Active Ingredients:</string>
@@ -98,7 +99,7 @@
     <string name="record_voice">Record Voice</string>
     <string name="record_play">Play Voice</string>
     <string name="record_stop">Stop Recording</string>
-    <string name="schedule_date">Schedule Date</string>
+    <string name="schedule_date">Schedule Date:</string>
     <string name="request_title">Question Title:</string>
     <string name="question_date">Requested Date:</string>
     <string name="question_assigned">Assigned To:</string>
@@ -109,6 +110,8 @@
     <string name="status_title">For tracking status of your question, please click on below View Status button</string>
     <string name="notification">Notification</string>
     <string name="select_state">Select Your State :</string>
+    <string name="about_us_title">The primary objectives of PMKSY are to attract investments in irrigation system at field level, develop and expand cultivable land in the country, enhance ranch water use in order to minimize wastage of water, enhance crop per drop by implementing water-saving technologies and precision irrigation. The plan additionally calls for bringing ministries, offices, organizations, research and financial institutions occupied with creation and recycling of water under one platform so that an exhaustive and holistic outlook of the whole water cycle is considered. The goal is to open the doors for optimal water budgeting in all sectors. Tagline for PMKSY is \"more crop per drop\".[4]  The Integrated Watershed Management programme was subsumed into the current PMKSY on 26 October 2015. The core implementation activities of IWMP were unchanged and were as per the Common Guidelines 2008 (Revised 2011) of IWMP. Convergence with other Central and State Government schemes, remains the top of the agenda for the programme towards optimal and judicious utilization of financial resources. Action has also been taken to undertake Natural Resources Management activities by utilizing labour component of MGNREGS and to undertake some of the Entry Point Activities in convergence with Swachh Bharat Mission (Gramin).[5]</string>
+    <string name="call_label">Call :646474747474 </string>
 
 
 </resources>

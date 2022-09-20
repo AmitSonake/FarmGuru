@@ -2,6 +2,7 @@ package com.farms.farmguru.ui.myplots
 
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dogs.util.SharedPreferencesHelper
 import com.farms.farmguru.adapters.spinners.PlotListAdapter
@@ -27,6 +28,7 @@ class MyPlotListingActivity : AppCompatActivity() {
         binding = ActivityMyPlotListingBinding.inflate(layoutInflater)
         val view =binding.root
         setContentView(view)
+        languageCode=SharedPreferencesHelper.invoke(this).getSelectedLanguage()
         val bundle :Bundle ?=intent.extras
         if (bundle!=null){
             val message = bundle.getString("LanguageCode") // 1
@@ -36,7 +38,9 @@ class MyPlotListingActivity : AppCompatActivity() {
         }
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(ApiServiceInterface::class.java)
         getPlotList()
-
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_SECURE)
 
     }
 
@@ -51,7 +55,7 @@ class MyPlotListingActivity : AppCompatActivity() {
                         println("$stringResponse")
                         plotParsedList= stringResponse?.let { parseJson(it) }!!
                         if(plotParsedList.size>0){
-                            binding.plotsListRecyclerView.adapter = PlotListAdapter(plotParsedList)
+                            binding.plotsListRecyclerView.adapter = PlotListAdapter(plotParsedList,languageCode)
 
                         }
                     }

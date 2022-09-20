@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            style="?android:attr/progressBarStyle"
+            android:indeterminateDrawable="@drawable/custom_rotate"
             android:layout_marginTop="?attr/actionBarSize"
             android:visibility="gone"
             android:layout_gravity="center"/>
@@ -52,6 +52,7 @@
             android:paddingTop="80dp">
 
             <TextView
+                android:id="@+id/label_fname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -69,12 +70,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:minHeight="48dp"
                     android:background="@null"
+                    android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/label_faddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -93,12 +95,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:minHeight="48dp"
                     android:background="@null"
+                    android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/label_ftaluqa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -117,12 +120,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:minHeight="48dp"
                     android:background="@null"
+                    android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/label_fdistrict"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -142,12 +146,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:minHeight="48dp"
                     android:background="@null"
+                    android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/label_fstate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -155,6 +160,7 @@
                 android:text="@string/farmers_state"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,12 +172,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:minHeight="48dp"
                     android:background="@null"
+                    android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/label_cname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -179,6 +186,7 @@
                 android:text="@string/crop_name"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -190,14 +198,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:minHeight="48dp"
                     android:background="@null"
-                    android:focusableInTouchMode="true"
                     android:cursorVisible="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="true"
+                    android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
             </LinearLayout>
+
             <TextView
+                android:id="@+id/label_cvariety"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -205,6 +215,7 @@
                 android:text="@string/crop_variety"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -219,7 +230,9 @@
                     android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
             </LinearLayout>
+
             <TextView
+                android:id="@+id/label_cseason"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -227,6 +240,7 @@
                 android:text="@string/crop_season"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -238,11 +252,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:minHeight="48dp"
                     android:background="@null"
+                    android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
             </LinearLayout>
+
             <TextView
+                android:id="@+id/label_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -255,9 +271,9 @@
                 android:id="@+id/enterDateId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:background="@drawable/square_border"
-                android:orientation="horizontal"
-                android:layout_weight="2">
+                android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/cropPruningDate"
@@ -267,12 +283,12 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_weight="1.5"
                     android:background="@null"
-                    android:hint="@string/choose_date"
-                    android:minHeight="48dp"
                     android:cursorVisible="false"
                     android:focusable="false"
-                    android:layout_weight="1.5"/>
+                    android:hint="@string/choose_date"
+                    android:minHeight="48dp" />
 
                 <ImageView
                     android:id="@+id/selectDate"
@@ -282,14 +298,15 @@
                     android:layout_margin="10dp"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@id/cropPruningDate"
+                    android:layout_weight="0.5"
                     android:background="@null"
                     android:hint="Select Source"
-                    android:layout_weight="0.5"
                     android:minHeight="48dp"
                     android:src="@android:drawable/ic_menu_my_calendar" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/label_wsource"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -297,13 +314,14 @@
                 android:text="@string/water_source"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
+
             <LinearLayout
                 android:id="@+id/enterSourceId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:background="@drawable/square_border"
-                android:orientation="horizontal"
-                android:layout_weight="2">
+                android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/waterSource"
@@ -313,10 +331,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_weight="1.5"
                     android:background="@null"
                     android:hint="@string/water_source"
-                    android:minHeight="48dp"
-                    android:layout_weight="1.5"/>
+                    android:minHeight="48dp" />
 
                 <ImageView
                     android:id="@+id/insertSource"
@@ -326,13 +344,14 @@
                     android:layout_margin="10dp"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@id/cropPruningDate"
-                    android:background="@null"
                     android:layout_weight="0.5"
+                    android:background="@null"
                     android:minHeight="48dp"
                     android:src="@android:drawable/ic_menu_add" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/label_stype"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -355,7 +374,9 @@
                     android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
             </LinearLayout>
+
             <TextView
+                android:id="@+id/label_intention"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -377,7 +398,9 @@
                     android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
+
             <TextView
+                android:id="@+id/label_cdistance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -425,6 +448,7 @@
 
 
             <TextView
+                android:id="@+id/label_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -432,6 +456,7 @@
                 android:text="@string/age_of_plant"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -442,12 +467,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:minHeight="48dp"
                     android:background="@null"
+                    android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/label_area"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

@@ -60,12 +60,28 @@ class CropPlotRegistrationActivity : AppCompatActivity() {
     private var sourceId:Int = 0
     private lateinit var binding: ActivityRegisterCropsBinding
     var cal = Calendar.getInstance()
+    var userLanguageID:Int = 1
 
+   /* override fun onResume() {
+        super.onResume()
+       *//* SharedPreferencesHelper.invoke(this).getSelectedLanguage()?.let {
+            com.farms.farmguru.utilities.LocaleHelper.setLocale(this!!,
+                it
+            )
+        }*//*
+        loadlabels()
+    }*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterCropsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val bundle :Bundle ?=intent.extras
+        println( " user language: ${SharedPreferencesHelper.invoke(this).getSelectedLanguage()}")
+        /*SharedPreferencesHelper.invoke(this).getSelectedLanguage()?.let {
+            com.farms.farmguru.utilities.LocaleHelper.setLocale(this!!,
+                it
+            )
+        }*/
         if (bundle!=null){
             appPlotId = bundle.getString("cropId")
             println("Crop Id = $appPlotId")
@@ -74,6 +90,7 @@ class CropPlotRegistrationActivity : AppCompatActivity() {
         binding.toolbar.setTitle("$appbarTitle")
         binding.cropName.setText("$appbarTitle")
         binding.toolbar.textAlignment= View.TEXT_ALIGNMENT_TEXT_END
+        loadlabels()
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(ApiServiceInterface::class.java)
         var networkStatus:Boolean= CheckInternetConnection.checkForInternet(this)
         if(networkStatus){
@@ -154,6 +171,62 @@ class CropPlotRegistrationActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun loadlabels() {
+
+        if(SharedPreferencesHelper.invoke(this).getSelectedLanguage().equals("kn")){
+            binding.labelFname.text="ರೈತರ ಹೆಸರು:"
+            binding.labelFaddress.text="ರೈತರ ವಿಳಾಸ:"
+            binding.labelFtaluqa.text="ರೈತರು ತಾಲೂಕು:"
+            binding.labelFdistrict.text="ರೈತರ ಜಿಲ್ಲೆ:"
+            binding.labelFstate.text="ರೈತರ ರಾಜ್ಯ:"
+            binding.labelCname.text="ಬೆಳೆ ಹೆಸರು:"
+            binding.labelCseason.text="ಬೆಳೆ ಋತು:"
+            binding.labelCvariety.text="ಬೆಳೆ ವೈವಿಧ್ಯ:"
+
+            binding.labelDate.text="ಸಮರುವಿಕೆಯ ದಿನಾಂಕ:"
+            binding.labelWsource.text="ನೀರಿನ ಮೂಲ:"
+            binding.labelStype.text="ಮಣ್ಣಿನ ವಿಧ:"
+            binding.labelIntention.text="ಉದ್ದೇಶ:"
+            binding.labelCdistance.text="ಬೆಳೆ ದೂರ:"
+            binding.labelAge.text="ಸಸ್ಯದ ವಯಸ್ಸು:"
+            binding.labelArea.text="ಒಟ್ಟು ಪ್ರದೇಶ (ಎಕರೆಗಳು):"
+
+            binding.cropPruningDate.hint="ದಿನಾಂಕವನ್ನು ಆರಿಸಿ:"
+            binding.cropDistanceArea.hint="ಬೆಳೆ ದೂರ:"
+            binding.cropDistanceLength.hint="ಬೆಳೆ ದೂರ:"
+            binding.totalArea.hint="ಒಟ್ಟು ಪ್ರದೇಶ (ಎಕರೆಗಳು):"
+            binding.registerPlotButton.text="ಸಲ್ಲಿಸು"
+            binding.waterSource.hint="ನೀರಿನ ಮೂಲ:"
+       }
+        else{
+            binding.labelFname.text="Farmers Name:"
+            binding.labelFaddress.text="Farmers Address:"
+            binding.labelFtaluqa.text="Farmers Taluqa:"
+            binding.labelFdistrict.text="Farmers District:"
+            binding.labelFstate.text="Farmers State:"
+            binding.labelCname.text="Crop Name:"
+            binding.labelCseason.text="Crop Season:"
+            binding.labelCvariety.text="Crop Variety:"
+
+            binding.labelDate.text="Pruning Date:"
+            binding.labelWsource.text="Water Source:"
+            binding.labelStype.text="Soil Type:"
+            binding.labelIntention.text="Intention:"
+            binding.labelCdistance.text="Crop Distance:"
+            binding.labelAge.text="Age of the plant:"
+            binding.labelArea.text="Total Area(Acres):"
+
+            binding.cropPruningDate.hint="Choose Date:"
+            binding.cropDistanceArea.hint="Crop Distance:"
+            binding.cropDistanceLength.hint="Crop Distance:"
+            binding.totalArea.hint="Total Area(Acres):"
+            binding.registerPlotButton.text="Submit"
+            binding.waterSource.hint="Water Source:"
+
+        }
+
     }
 
     private fun showAlertDialog(infoMessage:String?){
@@ -279,7 +352,9 @@ class CropPlotRegistrationActivity : AppCompatActivity() {
 
     }
     private fun fetchSoilType(){
-        mApiService!!.getSoilType().enqueue(object:
+        //mApiService!!.getSoilType().enqueue(object:
+        userLanguageID = Integer.parseInt(SharedPreferencesHelper.invoke(this).getUserLanguage())
+        mApiService!!.getSoilTypeByLangId(userLanguageID).enqueue(object:
             Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if(response.code()==200||response.code()==201|| response.code()==202){
@@ -298,7 +373,8 @@ class CropPlotRegistrationActivity : AppCompatActivity() {
 
     private fun fetchIrrigationSource(){
         //binding.progressbar.visibility = View.VISIBLE
-        mApiService!!.getIrrigationSource().enqueue(object:
+        userLanguageID = Integer.parseInt(SharedPreferencesHelper.invoke(this).getUserLanguage())
+        mApiService!!.getIrrigationSourceBylangID(userLanguageID).enqueue(object:
             Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if(response.code()==200||response.code()==201|| response.code()==202){
@@ -319,7 +395,8 @@ class CropPlotRegistrationActivity : AppCompatActivity() {
     }
 
     private fun fetchIntention(){
-        mApiService!!.getCropPurpose().enqueue(object:
+        userLanguageID = Integer.parseInt(SharedPreferencesHelper.invoke(this).getUserLanguage())
+        mApiService!!.getCropPurposeBylangID(userLanguageID).enqueue(object:
             Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if(response.code()==200||response.code()==201|| response.code()==202){
@@ -382,7 +459,7 @@ class CropPlotRegistrationActivity : AppCompatActivity() {
             //val jsonObj = JSONObject(jsonResponse)
             val jsonObj = jsonArray.optJSONObject(i)
             val cropPurposeId =jsonObj.optString("CropPurposeId")
-            val cropPurposeDesc=jsonObj.optString("CropPurposeDesc")
+            val cropPurposeDesc=jsonObj.optString("CropPurposeName")
 
             intentionList.add(CropPurpose(cropPurposeId,cropPurposeDesc))
             intentionData.add(cropPurposeDesc)

@@ -65,6 +65,7 @@
             android:theme="@style/Theme.FarmGuru.NoActionBar" />
         <activity
             android:name=".ui.signup.SignupActivity"
+            android:theme="@style/Theme.FarmGuru.NoActionBar"
             android:exported="true" />
         <activity
             android:name=".ui.language.LanguageSelectionActivity"

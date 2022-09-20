@@ -5,12 +5,14 @@ import android.os.Build
 import android.annotation.TargetApi
 import android.content.Context
 
-import android.content.SharedPreferences
+
+import androidx.preference.PreferenceManager
 import android.content.res.Configuration
 import android.content.res.Resources
 
-import android.preference.PreferenceManager
+//import android.preference.PreferenceManager
 import java.util.*
+import java.util.prefs.Preferences
 
 
 object LocaleHelper {
@@ -55,7 +57,7 @@ object LocaleHelper {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             configuration.setLayoutDirection(locale)
         }
-        resources.updateConfiguration(configuration, resources.getDisplayMetrics())
+        context.resources.updateConfiguration(configuration, resources.getDisplayMetrics())
         return context
     }
 }

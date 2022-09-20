@@ -41,8 +41,9 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:minHeight="48dp"
-                android:textSize="12dp"
+                android:visibility="gone"
                 android:text="@string/present_crop_period"
+                android:textSize="12dp"
 
                 />
 <RelativeLayout
@@ -58,6 +59,7 @@
         android:id="@+id/scheduellayout">
 
         <Button
+            android:visibility="gone"
             android:id="@+id/myPlotSchedule"
             android:layout_width="200dp"
             android:layout_height="60dp"
@@ -70,6 +72,7 @@
             android:text="@string/my_plot_schedule"
             />
         <Button
+            android:visibility="gone"
             android:id="@+id/weatherReport"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
@@ -83,6 +86,7 @@
             />
     </LinearLayout>
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/helplinelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -116,6 +120,7 @@
             />
     </LinearLayout>
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/webinarlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -149,6 +154,7 @@
             />
     </LinearLayout>
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/dealerlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -182,6 +188,7 @@
             />
     </LinearLayout>
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/diarylayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -226,7 +233,7 @@
         android:minHeight="48dp"
         android:textSize="12dp"
         android:layout_below="@id/diarylayout"
-        android:text="@string/register_another_plot"
+        android:text="Make Payment"
         />
 </RelativeLayout>
 </RelativeLayout>

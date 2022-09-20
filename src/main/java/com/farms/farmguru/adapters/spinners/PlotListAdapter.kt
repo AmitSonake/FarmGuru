@@ -20,7 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class PlotListAdapter(private val plotsList: MutableList<PlotListing>)
+class PlotListAdapter(private val plotsList: MutableList<PlotListing>, private var userLanguage:String?)
     : RecyclerView.Adapter<PlotListAdapter.ViewHolder>() {
     private var mApiService: ApiServiceInterface?= null
    inner class ViewHolder(val binding: PlotListingItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -33,6 +33,13 @@ class PlotListAdapter(private val plotsList: MutableList<PlotListing>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // display the current animal
+        if(userLanguage.equals("kn")){
+            holder.binding.titleLabel.text="ರೈತರ ಹೆಸರು:"
+            holder.binding.subTitleLabel.text="ರೈತರ ವಿಳಾಸ:"
+            holder.binding.cropVarietyLabel.text="ಬೆಳೆ ಹೆಸರು:"
+            holder.binding.cropSeasonLabel.text="ಬೆಳೆ ಋತು:"
+            holder.binding.viewSchedule.text="ವೇಳಾಪಟ್ಟಿಯನ್ನು ವೀಕ್ಷಿಸಿ"
+        }
         holder.binding.titleValue.text = plotsList[position].FarmerName
         holder.binding.subTitleValue.text = plotsList[position].FarmerAddress
         if(plotsList[position].CropId.equals(1)){

@@ -37,6 +37,9 @@ class ExecutiveFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+       /* binding.textSubtitle.setOnClickListener {
+
+        }*/
         return root
     }
 

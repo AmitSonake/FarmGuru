@@ -23,18 +23,17 @@
             android:layout_height="wrap_content"
             android:padding="10dp">
 
-        <TextView
-            android:id="@+id/title_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/farmer_name"
-            android:textColor="@color/black"
-            android:layout_gravity="left|center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:textSize="15sp"
-            android:textStyle="normal"
-            />
+            <TextView
+                android:id="@+id/title_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/farmer_name"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="normal" />
         <TextView
             android:id="@+id/title_value"
             android:layout_width="match_parent"
@@ -50,18 +49,17 @@
             />
 
             <TextView
-                android:layout_below="@id/title_label"
                 android:id="@+id/sub_title_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/farmer_address"
-                android:textColor="@color/black"
+                android:layout_below="@id/title_label"
                 android:layout_gravity="left|center_horizontal"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                android:text="@string/farmer_address"
+                android:textColor="@color/black"
                 android:textSize="15sp"
-                android:textStyle="normal"
-                />
+                android:textStyle="normal" />
             <TextView
                 android:layout_below="@id/title_label"
                 android:id="@+id/sub_title_value"
@@ -103,19 +101,19 @@
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="normal" />
+
             <TextView
-                android:layout_below="@id/crop_variety_label"
                 android:id="@+id/crop_season_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/crop_season"
-                android:textColor="@color/black"
+                android:layout_below="@id/crop_variety_label"
                 android:layout_gravity="left|center_horizontal"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                android:text="@string/crop_season"
+                android:textColor="@color/black"
                 android:textSize="15sp"
-                android:textStyle="normal"
-                />
+                android:textStyle="normal" />
             <TextView
                 android:layout_below="@id/crop_variety_label"
                 android:id="@+id/crop_season_value"
@@ -157,16 +155,27 @@
 
             <Button
                 android:id="@+id/viewSchedule"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_width="130dip"
+                android:layout_height="70dip"
                 android:layout_below="@id/editFarm"
-                android:layout_centerInParent="true"
                 android:layout_marginTop="60dp"
+                android:layout_marginRight="10dip"
+                android:clipToOutline="true"
+
+                android:contentDescription="@string/app_name"
+                android:text="@string/view_schedule" />
+
+            <Button
+                android:id="@+id/button_make_payment"
+                android:layout_width="130dip"
+                android:layout_height="70dip"
+                android:layout_below="@id/editFarm"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="5dip"
+                android:layout_toRightOf="@id/viewSchedule"
                 android:clipToOutline="true"
                 android:contentDescription="@string/app_name"
-                android:src="@android:drawable/ic_menu_view"
-                android:text="@string/view_schedule"
-                android:tooltipText="View Schedule" />
+                android:text="@string/make_payment" />
 
         </RelativeLayout>
 

@@ -2,6 +2,7 @@ package com.farms.farmguru.schedule
 
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dogs.util.SharedPreferencesHelper
 import com.farms.farmguru.adapters.ListSchedulePlotAdapter
@@ -21,13 +22,14 @@ class PlotListingActivity : AppCompatActivity() {
     private var mApiService: ApiServiceInterface?= null
     private val plotList = ArrayList<PlotListing>()
     private var plotParsedList = ArrayList<PlotListing>()
-    var languageCode:String? ="kn"
+    var languageCode:String? ="EN"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyPlotListingBinding.inflate(layoutInflater)
         val view =binding.root
         setContentView(view)
+        languageCode=SharedPreferencesHelper.invoke(this).getSelectedLanguage()
         val bundle :Bundle ?=intent.extras
         if (bundle!=null){
             val message = bundle.getString("LanguageCode") // 1
@@ -38,7 +40,9 @@ class PlotListingActivity : AppCompatActivity() {
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(ApiServiceInterface::class.java)
         getPlotList()
 
-
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_SECURE)
     }
 
 
@@ -52,7 +56,7 @@ class PlotListingActivity : AppCompatActivity() {
                         println("$stringResponse")
                         plotParsedList= stringResponse?.let { parseJson(it) }!!
                         if(plotParsedList.size>0){
-                            binding.plotsListRecyclerView.adapter = ListSchedulePlotAdapter(plotParsedList)
+                            binding.plotsListRecyclerView.adapter = ListSchedulePlotAdapter(plotParsedList,languageCode)
 
                         }
                     }

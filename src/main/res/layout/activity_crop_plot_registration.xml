@@ -36,11 +36,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            style="?android:attr/progressBarStyle"
+            android:indeterminateDrawable="@drawable/custom_rotate"
             android:layout_marginTop="?attr/actionBarSize"
             android:visibility="visible"
             android:layout_gravity="center"/>
-
+        <!-- style="?android:attr/progressBarStyle"-->
         <LinearLayout
             android:id="@+id/linearlayout"
             android:layout_width="match_parent"

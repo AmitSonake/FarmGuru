@@ -41,7 +41,6 @@ object ApiClient {
 
     fun getWeatherClient():Retrofit? {
         if(retrofit==null){
-
             val client =OkHttpClient.Builder()
                 .connectTimeout(100,TimeUnit.SECONDS)
                 .readTimeout(100,TimeUnit.SECONDS)

@@ -80,6 +80,7 @@ class ComplaintRegistrationActivity : AppCompatActivity() {
         binding= ActivityComplaintRegistrationBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        getPermissionToRecordAudio()
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(
             ApiServiceInterface::class.java)
                /* if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

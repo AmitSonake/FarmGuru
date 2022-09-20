@@ -5,6 +5,8 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dogs.util.SharedPreferencesHelper
 import com.farms.farmguru.MainActivity
@@ -19,6 +21,7 @@ import com.farms.farmguru.model.TokenResponse
 import com.farms.farmguru.network.ApiClient
 import com.farms.farmguru.network.ApiServiceInterface
 import com.farms.farmguru.ui.language.LanguageSelectionActivity
+import com.farms.farmguru.ui.signup.SignupActivity
 import com.farms.farmguru.ui.splash.TestActivity
 import com.farms.farmguru.utilities.CheckInternetConnection
 import com.google.gson.Gson
@@ -38,6 +41,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(binding.root)
 
         mApiService = ApiClient.getClient()!!.create(ApiServiceInterface::class.java)
@@ -57,6 +63,12 @@ class LoginActivity : AppCompatActivity() {
             }
 
 
+        }
+
+        binding.btnLinkToSignup.setOnClickListener {
+            val intent = Intent(this,SignupActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
 
@@ -131,9 +143,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loadActivity(topic: TokenResponse?) {
         val accesToken:String? = topic!!.access_token
+        println(accesToken)
         SharedPreferencesHelper.invoke(this).saveUserToken(accesToken)
         SharedPreferencesHelper.invoke(this).saveUserName( topic!!.userName)
-        SharedPreferencesHelper.invoke(this).saveUserLoggedIn(true)
+       // SharedPreferencesHelper.invoke(this).saveUserLoggedIn(true)
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(ApiServiceInterface::class.java)
         getPlotList()
 
@@ -141,7 +154,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun navigateToActivity(flag: Int){
         if(flag==1){
-            val intent = Intent(this,LanguageSelectionActivity::class.java)
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }else {
             val intent = Intent(this,MainActivity::class.java)

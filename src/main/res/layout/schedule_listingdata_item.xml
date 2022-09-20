@@ -20,22 +20,20 @@
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             >
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dip"
-               >
+                android:layout_height="match_parent"
+                android:padding="10dip">
 
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="100dip"
                     android:layout_height="80dip"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/farm_logo"
-                   />
+                    android:src="@drawable/krushi_logos" />
 
                 <TextView
                     android:id="@+id/title_label"
@@ -98,17 +96,19 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/medicine_details"
                     android:textColor="@color/black"
+                    android:visibility="gone"
                     android:textStyle="bold" />
 
-                <TextView
+                <WebView
                     android:id="@+id/crop_variety_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/crop_variety_label"
-                    android:layout_marginStart="10dip"
+                    android:layout_marginStart="2dip"
                     android:layout_marginTop="2dip"
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
+                    android:background="@android:color/transparent"
                     android:text=""
                     android:textColor="@color/black" />
 
@@ -123,7 +123,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/active_ingredients"
                     android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/crop_season_value"
@@ -135,7 +136,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/diseaseInfection_label"
@@ -148,7 +150,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/disease_Infection"
                     android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/diseaseInfection_value"
@@ -160,7 +163,9 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
                 <TextView
                     android:id="@+id/schedule_date_label"
                     android:layout_width="wrap_content"

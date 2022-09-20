@@ -1,5 +1,7 @@
 package com.farms.farmguru.ui.home
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +12,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.dogs.util.SharedPreferencesHelper
 import com.farms.farmguru.R
 import com.farms.farmguru.adapters.HomeSliderImageAdapter
 import com.farms.farmguru.databinding.FragmentDashbordBinding
@@ -48,7 +51,7 @@ class HomeFragment : Fragment() {
        // _binding = FragmentHomeBinding.inflate(inflater, container, false)
         _binding = FragmentDashbordBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+        loadlabels(root.context)
         val baseUrl: String?="https://newsapi.org/v2/"
        mApiService = ApiClient.getClient()!!.create(ApiServiceInterface::class.java)
         //fetchNewsListing()
@@ -66,7 +69,7 @@ class HomeFragment : Fragment() {
 
         val mediaController = MediaController(context)
         mediaController.setAnchorView(binding.videoView)
-
+        binding.videoView.visibility=View.GONE
         binding.videoView.setVideoPath("https://media.istockphoto.com/videos/vineyard-red-wine-grapes-on-the-vine-of-winery-video-id1044279946")
         binding.videoView.setMediaController(mediaController)
         binding.videoView.requestFocus()
@@ -119,6 +122,37 @@ class HomeFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun loadlabels(context: Context) {
+        if(SharedPreferencesHelper.invoke(context).getSelectedLanguage().equals("kn")){
+            binding.presentCropPeriod.text="ಪ್ರಸ್ತುತ ಬೆಳೆ ಅವಧಿ"
+            binding.agreeDealerButton.text="ಅಗ್ರಿ ಇನ್ಪುಟ್ ಡೀಲರ್"
+            binding.askQuestionButton.text="ನಿಮ್ಮ ಪ್ರಶ್ನೆ ನಮ್ಮ ಉತ್ತರ"
+            binding.weatherReport.text="ಹವಾಮಾನ ವರದಿ"
+            binding.myPlotSchedule.text="ನನ್ನ ಕಥಾವಸ್ತು ಇಂದಿನ ವೇಳಾಪಟ್ಟಿ"
+            binding.knowledgeBankButton.text="ಜ್ಞಾನ ಬ್ಯಾಂಕ್"
+            binding.webinarButton.text="ವೆಬ್ನಾರ್"
+            binding.videosButton.text="ನಿಮಗಾಗಿ ವೀಡಿಯೊಗಳು"
+            binding.serviceProviderButton.text="ಸೇವೆ ಒದಗಿಸುವವರು"
+            binding.myDiaryButton.text="ನನ್ನ ಡೈರಿ"
+            binding.myPlotDetailButton.text="ನನ್ನ ಕಥಾವಸ್ತುವಿನ ವಿವರಗಳು"
+            binding.registerAnotherPlotButton.text="ನಿಮ್ಮ ಇನ್ನೊಂದು ಕಥಾವಸ್ತುವನ್ನು ನೋಂದಾಯಿಸಿ"
+
+        }else{
+            binding.presentCropPeriod.text="Present Crop Period"
+            binding.agreeDealerButton.text="Agri Input Dealer"
+            binding.askQuestionButton.text="Your Question our Answer"
+            binding.weatherReport.text="Weather Report"
+            binding.myPlotSchedule.text="My plot Today’s Schedule"
+            binding.knowledgeBankButton.text="Knowledge Bank"
+            binding.webinarButton.text="Webinar"
+            binding.videosButton.text="Videos for You"
+            binding.serviceProviderButton.text="Service Provider"
+            binding.myDiaryButton.text="My Diary"
+            binding.myPlotDetailButton.text="My plot Details"
+            binding.registerAnotherPlotButton.text="Register your Another Plot"
+        }
     }
 
     override fun onDestroyView() {

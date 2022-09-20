@@ -24,21 +24,32 @@ interface ApiServiceInterface {
 
     @GET("api/crop")
     fun getCrops(): Call<ResponseBody>
+    @GET("GetCropsByLangId")
+    fun GetCropsByLangId(@Query("id") id : Int): Call<ResponseBody>
 
     @GET("api/GetCropVarietyByCropId")
     fun getCropVariety(@Query("id") id : Int): Call<ResponseBody>
+    @GET("GetCropVarietiesByLangId")
+    fun getCropVarietiesByLangId(@Query("id") id : Int): Call<ResponseBody>
 
     @GET("api/soilType")
     fun getSoilType(): Call<ResponseBody>
+    @GET("GetSoilTypesByLangId")
+    fun getSoilTypeByLangId(@Query("id") id : Int): Call<ResponseBody>
 
     @GET("api/IrrigationSource")
     fun getIrrigationSource(): Call<ResponseBody>
+    @GET("GetIrrigationSourcesByLangId")
+    fun getIrrigationSourceBylangID(@Query("id") id : Int): Call<ResponseBody>
+
 
     @GET("api/CropPurpose")
     fun getCropPurpose(): Call<ResponseBody>
+    @GET("GetCropPurposesByLangId")
+    fun getCropPurposeBylangID(@Query("id") id : Int): Call<ResponseBody>
 
     @GET("api/GetPlotSchedule")
-    fun getSchedules(@Query("id") id : Int): Call<ResponseBody>
+    fun getSchedules(@Query("id") id : Int, @Query("langId") langId : Int): Call<ResponseBody>
 
     @DELETE("api/PlotRegistration")
     fun deletePlot(@Query("id") id : Int
@@ -82,6 +93,9 @@ interface ApiServiceInterface {
 
     @GET("api/GetUserQues")
     fun getRegisteredQuestions(): Call<ResponseBody>
+
+    @GET("api/Language")
+    fun getLanguages(): Call<ResponseBody>
 }
 
 

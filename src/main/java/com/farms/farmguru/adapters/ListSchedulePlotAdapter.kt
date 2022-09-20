@@ -1,10 +1,12 @@
 package com.farms.farmguru.adapters
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dogs.util.SharedPreferencesHelper
@@ -15,16 +17,20 @@ import com.farms.farmguru.model.PlotListing
 import com.farms.farmguru.network.ApiClient
 import com.farms.farmguru.network.ApiServiceInterface
 import com.farms.farmguru.schedule.MyScheduleActivity
+import com.razorpay.Checkout
+import com.razorpay.PaymentResultListener
 import okhttp3.ResponseBody
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
-class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>)
-    : RecyclerView.Adapter<ListSchedulePlotAdapter.ViewHolder>() {
+class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>,private var userLanguage:String?)
+    : RecyclerView.Adapter<ListSchedulePlotAdapter.ViewHolder>(), PaymentResultListener {
     private var mApiService: ApiServiceInterface?= null
-   inner class ViewHolder(val binding: PlotSchedulelistingItemBinding) : RecyclerView.ViewHolder(binding.root)
+    private lateinit var activityContext :Context
+    inner class ViewHolder(val binding: PlotSchedulelistingItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflate the custom view from xml layout file
@@ -34,6 +40,14 @@ class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // display the current animal
+        if(userLanguage.equals("kn")){
+            holder.binding.titleLabel.text="ರೈತರ ಹೆಸರು:"
+            holder.binding.subTitleLabel.text="ರೈತರ ವಿಳಾಸ:"
+            holder.binding.cropVarietyLabel.text="ಬೆಳೆ ಹೆಸರು:"
+            holder.binding.cropSeasonLabel.text="ಬೆಳೆ ಋತು:"
+            holder.binding.viewSchedule.text="ವೇಳಾಪಟ್ಟಿಯನ್ನು ವೀಕ್ಷಿಸಿ"
+            holder.binding.buttonMakePayment.text="ಪಾವತಿ ಮಾಡಿ"
+        }
         holder.binding.titleValue.text = plotsList[position].FarmerName
         holder.binding.subTitleValue.text = plotsList[position].FarmerAddress
         if(plotsList[position].CropId.equals(1)){
@@ -72,6 +86,10 @@ class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>)
             ContextCompat.startActivity(it.context, intent, null)
            // overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
         }
+        holder.binding.buttonMakePayment.setOnClickListener {
+           makePayment(it.context as Activity)
+            // overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+        }
 
     }
 
@@ -108,5 +126,37 @@ class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>)
             }
         })
 
+    }
+
+    override fun onPaymentSuccess(s: String?) {
+        Toast.makeText(activityContext, "Payment is successful  : " + s, Toast.LENGTH_SHORT).show();
+
+    }
+
+    override fun onPaymentError(s: Int, p1: String?) {
+        Toast.makeText(activityContext, "Payment is failed due to error : " + s, Toast.LENGTH_SHORT).show();
+    }
+
+
+    private fun makePayment(context:Activity){
+        val checkout = Checkout()
+        activityContext = context
+        checkout.setKeyID("rzp_test_cPeCKKKGVVndiE")
+        try {
+            val options = JSONObject()
+            options.put("name","Razorpay Corp")
+            options.put("description","Demoing Charges")
+            options.put("theme.color", "#3399cc");
+            options.put("currency","INR");
+            options.put("amount","199")//pass amount in currency subunits
+            val prefill = JSONObject()
+            prefill.put("email","abc.gv@example.com")
+            prefill.put("contact","9876543220")
+            options.put("prefill",prefill)
+            checkout.open(context,options)
+        }catch (e: Exception){
+            Toast.makeText(context,"Error in payment: "+ e.message, Toast.LENGTH_LONG).show()
+            e.printStackTrace()
+        }
     }
 }
