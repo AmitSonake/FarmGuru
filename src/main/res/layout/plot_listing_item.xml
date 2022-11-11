@@ -23,20 +23,20 @@
             android:layout_height="wrap_content"
             android:padding="10dp">
 
+            <TextView
+                android:id="@+id/farm_id_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:minWidth="125dp"
+                android:text="@string/farm_id"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp"
+                android:textStyle="normal" />
         <TextView
-            android:id="@+id/title_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/farmer_name"
-            android:textColor="@color/black"
-            android:layout_gravity="left|center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:textSize="15sp"
-            android:textStyle="normal"
-            />
-        <TextView
-            android:id="@+id/title_value"
+            android:id="@+id/farm_id_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -50,18 +50,46 @@
             />
 
             <TextView
-                android:layout_below="@id/title_label"
-                android:id="@+id/sub_title_label"
+                android:id="@+id/title_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/farmer_address"
+                android:layout_below="@id/farm_id_label"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/farmer_name"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:minWidth="125dp"/>
+            <TextView
+                android:layout_below="@id/farm_id_value"
+                android:id="@+id/title_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_gravity="left|center_horizontal"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/title_label"
                 android:layout_marginBottom="20dp"
                 android:textSize="15sp"
                 android:textStyle="normal"
                 />
+
+            <TextView
+                android:id="@+id/sub_title_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_label"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/farmer_address"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:minWidth="125dp"/>
             <TextView
                 android:layout_below="@id/title_label"
                 android:id="@+id/sub_title_value"
@@ -78,20 +106,21 @@
                 />
 
             <TextView
-                android:id="@+id/crop_variety_label"
+                android:id="@+id/crop_name_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sub_title_label"
                 android:layout_gravity="left|center_horizontal"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                android:minWidth="125dp"
                 android:text="@string/crop_name"
-                android:textColor="@color/black"
+                android:textColor="@color/purple_500"
                 android:textSize="15sp"
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/crop_variety_value"
+                android:id="@+id/crop_name_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sub_title_label"
@@ -103,19 +132,48 @@
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="normal" />
+
             <TextView
-                android:layout_below="@id/crop_variety_label"
-                android:id="@+id/crop_season_label"
+                android:id="@+id/crop_variety_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/crop_season"
-                android:textColor="@color/black"
+                android:layout_below="@id/crop_name_label"
                 android:layout_gravity="left|center_horizontal"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                android:minWidth="125dp"
+                android:text="@string/crop_variety"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/crop_variety_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/crop_name_label"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/crop_variety_label"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/crop_season_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/crop_variety_label"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/crop_season"
+                android:textColor="@color/purple_500"
                 android:textSize="15sp"
                 android:textStyle="normal"
-                />
+                android:minWidth="125dp"/>
             <TextView
                 android:layout_below="@id/crop_variety_label"
                 android:id="@+id/crop_season_value"
@@ -131,7 +189,117 @@
                 android:textStyle="normal"
                 />
 
+            <TextView
+                android:id="@+id/crop_distance_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/crop_season_label"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/crop_distance"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:minWidth="125dp"/>
+            <TextView
+                android:layout_below="@id/crop_season_label"
+                android:id="@+id/crop_distance_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/crop_distance_label"
+                android:layout_marginBottom="20dp"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                />
 
+            <TextView
+                android:id="@+id/plot_age_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/crop_distance_label"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/age_of_plant"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:minWidth="125dp"/>
+            <TextView
+                android:layout_below="@id/crop_distance_label"
+                android:id="@+id/plot_age_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/plot_age_label"
+                android:layout_marginBottom="20dp"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:id="@+id/plot_area_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/plot_age_label"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/total_area"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:minWidth="125dp"/>
+            <TextView
+                android:layout_below="@id/plot_age_label"
+                android:id="@+id/plot_area_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/plot_area_label"
+                android:layout_marginBottom="20dp"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                />
+
+
+            <TextView
+                android:id="@+id/payment_status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/plot_area_value"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/payment_status"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:minWidth="125dp"/>
+            <TextView
+                android:layout_below="@id/plot_area_value"
+                android:id="@+id/payment_status_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/payment_status_label"
+                android:layout_marginBottom="20dp"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                />
             <ImageView
                 android:id="@+id/deleteFarm"
                 android:layout_width="50dp"
@@ -139,6 +307,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="12dp"
+                android:visibility="invisible"
                 android:contentDescription="@string/app_name"
                 android:src="@android:drawable/ic_menu_delete" />
 
@@ -146,10 +315,11 @@
                 android:id="@+id/editFarm"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
                 android:layout_below="@id/crop_variety_label"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="43dp"
+                android:visibility="gone"
                 android:contentDescription="@string/app_name"
                 android:src="@android:drawable/ic_menu_edit" />
 
@@ -164,6 +334,7 @@
                 android:contentDescription="@string/app_name"
                 android:src="@android:drawable/ic_menu_view"
                 android:text="@string/view_schedule"
+                android:visibility="gone"
                 android:tooltipText="View Schedule" />
 
         </RelativeLayout>

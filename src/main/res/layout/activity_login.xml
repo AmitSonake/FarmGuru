@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:indeterminateDrawable="@drawable/custom_rotate"
+        style="?android:attr/progressBarStyle"
         android:layout_marginTop="?attr/actionBarSize"
         android:visibility="gone"
         android:layout_gravity="center"/>
@@ -60,8 +60,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:hint="@string/email"
-            android:text="amit"
+            android:hint="@string/username"
+            android:text=""
             android:inputType="text"
             android:minHeight="48dp" />
 
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:hint="@string/passWord"
-            android:text="amit2022"
+            android:text=""
             android:inputType="textPassword"
             android:minHeight="48dp" />
 
@@ -98,7 +98,8 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@color/white"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

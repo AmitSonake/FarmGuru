@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.farms.farmguru">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.farms.krushisanjivini">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -8,26 +9,40 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@drawable/krushi_logos"
         android:label="@string/app_name"
         android:roundIcon="@drawable/krushi_logos"
         android:supportsRtl="true"
         android:theme="@style/Theme.FarmGuru"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
         <!--<activity
             android:name=".ui.dealers.DealerSearchActivity"
             android:exported="true" />-->
+        <service
+            android:name=".notification.KrushiSanjiviniNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
         <activity
             android:name=".ui.questions.QuestionHomeActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/ask_question"
             android:exported="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.farms.farmguru.fileprovider"
+            android:authorities="com.farms.krushisanjivini.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -36,61 +51,105 @@
         </provider>
 
         <activity
-            android:name=".ComplaintRegistrationActivity"
-            android:exported="true" />
+            android:name="com.farms.krushisanjivini.ComplaintRegistrationActivity"
+            android:exported="true"
+            android:label="@string/askquestion"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".schedule.MyScheduleActivity"
             android:exported="true"
-            android:label="@string/schedule" />
+            android:label="@string/schedule"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".utilities.AskQuestionActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/askquestion"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".schedule.MyPlotScheduleActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/schedule"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mydiary.MyDiaryScheduleActivity"
+            android:exported="true"
+            android:label="@string/my_diary"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mydiary.DiaryPlotListingActivity"
+            android:exported="true"
+            android:label="@string/my_diary"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".schedule.PlotListingActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/my_plot_details"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".notification.NotificationListActivity"
+            android:exported="true"
+            android:label="@string/notification"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.questions.MyQuestionListingActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/ask_question"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.mydiary.DiaryNoteActivity"
             android:exported="true"
+            android:label="@string/my_diary"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.FarmGuru.NoActionBar" />
         <activity
             android:name=".login.LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.FarmGuru.NoActionBar" />
         <activity
             android:name=".ui.signup.SignupActivity"
             android:theme="@style/Theme.FarmGuru.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/label_signup"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.language.LanguageSelectionActivity"
-            android:exported="true" />
+            android:theme="@style/Theme.FarmGuru.NoActionBar"
+            android:exported="true"
+            android:label="@string/menu_language"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".plotregistration.CropPlotRegistrationActivity"
             android:exported="true"
-            android:theme="@style/Theme.FarmGuru.NoActionBar" />
+            android:label="@string/register_your_plot"
+            android:screenOrientation="portrait"
+             />
         <activity
             android:name=".ui.myplots.MyPlotActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/select_plot_details"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.myplots.MyPlotListingActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/my_plot_details"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.weather.WeatherActivity"
             android:exported="true"
+            android:label="@string/payment_status"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ui.weather.WeatherForecastActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ui.splash.TestActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.FarmGuru.NoActionBar" />
         <activity
             android:name=".ui.splash.SplashActivity"
@@ -103,16 +162,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data
+        <!--<meta-data
             android:name="com.razorpay.Apikey"
             android:value="rzp_test_cPeCKKKGVVndiE"/>
         <meta-data
             android:name="com.google.gms.wallet.api.enabled"
-            android:value="true"/>
+            android:value="true"/>-->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.FarmGuru.NoActionBar" />
     </application>
 

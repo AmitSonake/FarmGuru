@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerInParent="true"
     tools:context=".ui.questions.QuestionHomeActivity"
     android:background="@color/list_color">
 
@@ -22,16 +23,17 @@
         android:id="@+id/buttonQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/question_label"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@color/purple_500"
         android:fontFamily="sans-serif"
         android:text="@string/raise_request"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_below="@id/question_label"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/question_label"
@@ -44,25 +46,28 @@
         android:text="@string/ques_title"
         android:textColor="@color/black"
         android:textSize="18sp"
-       />
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/view_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/buttonViewStatus"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:text="@string/status_title"
         android:textColor="@color/black"
-        android:layout_above="@id/buttonViewStatus"
         android:textSize="18sp"
-        />
+        android:visibility="visible" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonViewStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/buttonQuestion"
+        android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
@@ -71,14 +76,9 @@
         android:fontFamily="sans-serif"
         android:text="@string/view_questions_list"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"/>
+        android:textSize="18sp" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/p"
-        android:visibility="visible"></ImageView>
+
     <RelativeLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
@@ -88,7 +88,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_centerHorizontal="true">
+        android:background="@color/purple_500"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/chooseLanguageLabel"
@@ -111,12 +113,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            android:background="@color/green_color"
+            android:background="@color/white"
             android:fontFamily="sans-serif"
             android:text="@string/raise_request"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonViewStatuss"
@@ -128,7 +130,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:layout_toRightOf="@id/buttonQuestions"
-            android:background="@color/green_color"
+            android:background="@color/white"
             android:fontFamily="sans-serif"
             android:text="@string/view_questions_list"
             android:textColor="@color/white"

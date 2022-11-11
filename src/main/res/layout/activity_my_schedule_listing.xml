@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:indeterminateDrawable="@drawable/custom_rotate"
+        style="?android:attr/progressBarStyle"
         android:layout_marginTop="?attr/actionBarSize"
         android:visibility="gone"
         android:layout_gravity="center"/>
@@ -49,12 +49,37 @@
         android:textColor="@color/black"
         android:visibility="gone"
         android:textSize="20sp"/>
+  <com.otaliastudios.zoom.ZoomLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scrollbars="vertical|horizontal"
+      app:transformation="centerInside"
+      app:transformationGravity="auto"
+      app:alignment="center"
+      app:overScrollHorizontal="true"
+      app:overScrollVertical="true"
+      app:overPinchable="true"
+      app:horizontalPanEnabled="true"
+      app:verticalPanEnabled="true"
+      app:zoomEnabled="true"
+      app:flingEnabled="true"
+      app:scrollEnabled="true"
+      app:oneFingerScrollEnabled="true"
+      app:twoFingersScrollEnabled="true"
+      app:threeFingersScrollEnabled="true"
+      app:minZoom="0.9"
+      app:minZoomType="realZoom"
+      app:maxZoom="5.5"
+      app:maxZoomType="realZoom"
+      app:animationDuration="280"
+      app:hasClickableChildren="false">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/plotsListRecyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="400dip"
         android:layout_height="wrap_content"
         android:visibility="visible"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
       <!--  </RelativeLayout>-->
     <!--</ScrollView>-->
+  </com.otaliastudios.zoom.ZoomLayout>
 </RelativeLayout>

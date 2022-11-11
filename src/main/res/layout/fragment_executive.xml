@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".ui.home.HomeFragment">
+   >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,33 +26,35 @@
         <TextView
             android:id="@+id/text_home"
             android:layout_width="match_parent"
-            android:layout_height="50dip"
+            android:layout_height="wrap_content"
             android:layout_below="@id/imageView"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:autoLink="email"
             android:clickable="true"
-            android:text="sanjivinikrushi@gmail.com"
+            android:text="@string/call_email"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textColorLink="@color/purple_500"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text_subtitle"
             android:layout_width="match_parent"
-            android:layout_height="50dip"
+            android:layout_height="wrap_content"
             android:layout_below="@id/text_home"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:autoLink="phone"
             android:clickable="true"
+            android:textColorLink="@color/purple_500"
             android:text="@string/call_label"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
 
     </RelativeLayout>
 </RelativeLayout>

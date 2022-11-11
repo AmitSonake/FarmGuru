@@ -16,7 +16,16 @@
         android:layout_marginTop="?attr/actionBarSize"
         android:visibility="gone"
         android:layout_gravity="center"/>
-
+    <TextView
+        android:id="@+id/no_schedule_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:text="@string/no_questions"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:textSize="20sp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cropRecyclerView"
         android:layout_width="match_parent"

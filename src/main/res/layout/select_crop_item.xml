@@ -24,8 +24,6 @@
         app:contentPadding="24dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp">
-
-
     </androidx.cardview.widget.CardView>
 
     <TextView

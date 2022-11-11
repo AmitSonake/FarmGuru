@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.farms.farmguru.ui.home.HomeFragment"
+        android:name="com.farms.krushisanjivini.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_language" />
 
     <!--<fragment
         android:id="@+id/nav_gallery"
@@ -25,24 +25,29 @@
 -->
     <fragment
         android:id="@+id/nav_language"
-        android:name="com.farms.farmguru.ui.language.LanguageFragment"
+        android:name="com.farms.krushisanjivini.ui.language.LanguageFragment"
         android:label="@string/menu_language"
         tools:layout="@layout/fragment_language" />
 
     <fragment
         android:id="@+id/nav_executive"
-        android:name="com.farms.farmguru.ui.executive.ExecutiveFragment"
+        android:name="com.farms.krushisanjivini.ui.executive.ExecutiveFragment"
         android:label="@string/menu_call_helpline"
         tools:layout="@layout/fragment_executive" />
 
     <fragment
         android:id="@+id/nav_aboutus"
-        android:name="com.farms.farmguru.ui.aboutus.AboutUsFragment"
+        android:name="com.farms.krushisanjivini.ui.aboutus.AboutUsFragment"
         android:label="@string/menu_about_us"
         tools:layout="@layout/fragment_aboutus" />
     <fragment
+        android:id="@+id/nav_privacypolicy"
+        android:name="com.farms.krushisanjivini.ui.privacypolicy.PrivacyPolicyFragment"
+        android:label="@string/privacy_title"
+        tools:layout="@layout/fragment_privacy_policy" />
+    <fragment
         android:id="@+id/nav_logout"
-        android:name="com.farms.farmguru.ui.logout.LogoutFragment"
+        android:name="com.farms.krushisanjivini.ui.logout.LogoutFragment"
         android:label="@string/menu_logout"
         tools:layout="@layout/fragment_logout" />
 </navigation>

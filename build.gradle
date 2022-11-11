@@ -9,15 +9,17 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.farms.farmguru"
+        applicationId "com.farms.krushisanjivini"
         minSdk 21
         targetSdk 30
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    aaptOptions {
+        cruncherEnabled = false
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -54,6 +56,7 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.databinding:baseLibrary:3.2.0-alpha11'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.0.2'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -88,9 +91,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:9.6.1'
 
 
-
+   /// mplementation 'io.github.aghajari:ZoomHelper:1.1.0'
+    implementation 'com.aghajari.zoomhelper:ZoomHelper:1.0.1'
+    //implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    implementation("com.otaliastudios:zoomlayout:1.9.0")
 
     //payment integaration
     //implementation 'in.payu:payu-checkout-pro:1.8.2'
-    implementation 'com.razorpay:checkout:1.6.19'
+  /*  implementation 'com.razorpay:checkout:1.6.19'*/
 }

@@ -4,11 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical">
+    android:scrollbars="vertical"
+    android:background="@color/white">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/list_color">
+    android:background="@color/white">
 <ProgressBar
     android:foregroundGravity="center_horizontal|center"
     android:id="@+id/progressbar"
@@ -39,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginBottom="5dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -59,19 +61,30 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/text_home"
         android:padding="16dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
+    <TextView
+        android:id="@+id/versionInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="@color/purple_500" />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_below="@id/imageSlider"
-            android:id="@+id/mainRelative">
+            android:id="@+id/mainRelative"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/presentCropPeriod"
@@ -185,7 +198,6 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:minHeight="48dp"
-
                     android:text="@string/videos"
                     />
             </LinearLayout>
@@ -207,6 +219,7 @@
                     android:layout_marginBottom="10dp"
                     android:minHeight="48dp"
                     android:textSize="12dp"
+
                     android:text="@string/agree_dealer"
                     />
                 <Button
@@ -218,7 +231,6 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:minHeight="48dp"
-
                     android:text="@string/service_provider"
                     />
             </LinearLayout>
@@ -273,11 +285,12 @@
                 android:id="@+id/video_view"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
+                android:layout_below="@id/registerAnotherPlotButton"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_below="@id/registerAnotherPlotButton"/>
+                android:visibility="gone"
+                android:layout_marginBottom="10dp" />
         </RelativeLayout>
 
 </RelativeLayout>

@@ -118,7 +118,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/tree" />
+                            android:src="@drawable/krushi_logos" />
                     </com.google.android.material.card.MaterialCardView>
                     <TextView
                         android:id="@+id/myImageViewText"
@@ -148,7 +148,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/crop"
+                            android:src="@drawable/krushi_logos"
                             android:tooltipText="Webinars" />
                     </com.google.android.material.card.MaterialCardView>
                     <TextView
@@ -179,7 +179,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/videos"
+                            android:src="@drawable/krushi_logos"
                             android:tooltipText="Webinars"
                             />
 
@@ -224,7 +224,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/weather" />
+                            android:src="@drawable/krushi_logos" />
                     </com.google.android.material.card.MaterialCardView>
                     <TextView
                         android:id="@+id/weathertv"
@@ -254,7 +254,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/webinar"
+                            android:src="@drawable/krushi_logos"
                             android:tooltipText="Webinars" />
                     </com.google.android.material.card.MaterialCardView>
                     <TextView
@@ -285,7 +285,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/help"
+                            android:src="@drawable/krushi_logos"
                             android:tooltipText="Webinars" />
                     </com.google.android.material.card.MaterialCardView>
                     <TextView

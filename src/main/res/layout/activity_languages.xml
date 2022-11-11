@@ -12,11 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:indeterminateDrawable="@drawable/custom_rotate"
+        style="?android:attr/progressBarStyle"
         android:layout_marginTop="?attr/actionBarSize"
         android:visibility="gone"
         android:layout_gravity="center"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dip"
+        android:background="@drawable/krushi_logos"
+        android:paddingBottom="50dip"
+        android:visibility="gone">
+
+    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
@@ -26,23 +34,23 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true">
+
+        >
 
         <TextView
             android:id="@+id/chooseLanguageLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="22sp"
             android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:paddingTop="20dip"
             android:text="Choose your language"
-            />
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonEnglish"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_below="@id/chooseLanguageLabel"
             android:layout_marginStart="20dp"
@@ -57,7 +65,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonKannada"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_below="@id/chooseLanguageLabel"
             android:layout_marginStart="20dp"
@@ -67,7 +75,7 @@
             android:layout_toRightOf="@id/buttonEnglish"
             android:background="@android:color/darker_gray"
             android:fontFamily="sans-serif"
-            android:text="KANNADA"
+            android:text="ಕನ್ನಡ"
             android:textColor="@color/black"
             android:textSize="26sp" />
 
@@ -83,8 +91,8 @@
             android:background="@android:color/darker_gray"
             android:fontFamily="sans-serif"
             android:text="Submit"
-            android:textSize="24sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 </RelativeLayout>

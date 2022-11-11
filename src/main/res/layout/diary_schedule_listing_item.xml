@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.mydiary.MyDiaryScheduleActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        >
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dip">
+
+                <ImageView
+                    android:id="@+id/zoom_imageView"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@android:drawable/ic_menu_zoom"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/title_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/zoom_imageView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/schedule_day"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/title_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title_label"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/sub_title_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title_value"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/after_pronningdays"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_title_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_title_label"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/sprayScheduleLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sub_title_value"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/spray_schedule"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/sprayScheduleNoteValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayScheduleLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="2dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:background="@android:color/transparent"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/crop_season_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayScheduleNoteValue"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/active_ingredients"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/crop_season_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/crop_season_label"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/diseaseInfection_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/crop_season_value"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/disease_Infection"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/diseaseInfection_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/diseaseInfection_label"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/sprayMedicineBrandLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayScheduleNoteValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/medicine_details"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/sprayMedicineBrandLabelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayMedicineBrandLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/sprayIngredientsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayMedicineBrandLabelValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/spray_ingredients"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sprayIngredientsLabelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayIngredientsLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/sprayPurposeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayIngredientsLabelValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/spray_purpose"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sprayPurposeLabelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayPurposeLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/basalDoseNoteLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sprayPurposeLabelValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/basal_dose_note"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/basalDoseNoteLabelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/basalDoseNoteLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/basalDoseMedicineBrandLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/basalDoseNoteLabelValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/basal_dose_medicine"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/basalDoseMedicineBrandLabelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/basalDoseMedicineBrandLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/basalDoseIngredientsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/basalDoseMedicineBrandLabelValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/basal_ingredients"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/basalDoseIngredientsLabelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/basalDoseIngredientsLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/basalDosePurposeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/basalDoseIngredientsLabelValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/basal_purpose"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/basalDosePurposeLabelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/basalDosePurposeLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/noteIfAnyLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/basalDosePurposeLabelValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/notes_data"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/noteIfAnyLabelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/noteIfAnyLabel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/schedule_date_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/noteIfAnyLabelValue"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/schedule_date"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/schedule_date_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/schedule_date_label"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_marginBottom="2dip"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

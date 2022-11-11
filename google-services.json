@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "975065005023",
-    "project_id": "farmguru-72bb2",
-    "storage_bucket": "farmguru-72bb2.appspot.com"
+    "project_number": "740586520069",
+    "project_id": "krushisanjivini-96d72",
+    "storage_bucket": "krushisanjivini-96d72.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:975065005023:android:81856468be0dfd44b9226a",
+        "mobilesdk_app_id": "1:740586520069:android:71bbdb6b6e9ecece58e66c",
         "android_client_info": {
-          "package_name": "com.farms.farmguru"
+          "package_name": "com.farms.krushisanjivini"
         }
       },
       "oauth_client": [
         {
-          "client_id": "975065005023-87sb71sot0v0v43e0d6f01hmcg92fo20.apps.googleusercontent.com",
+          "client_id": "740586520069-dkr71k173jfbusu3vs363mspoq83cpuk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDJNr-o_7uQAAfYwcSKUvF6wCYX26yRpsk"
+          "current_key": "AIzaSyCvfve1hkdDqQhwC0pfojBsFr4q-7rIA8o"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "975065005023-87sb71sot0v0v43e0d6f01hmcg92fo20.apps.googleusercontent.com",
+              "client_id": "740586520069-dkr71k173jfbusu3vs363mspoq83cpuk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
