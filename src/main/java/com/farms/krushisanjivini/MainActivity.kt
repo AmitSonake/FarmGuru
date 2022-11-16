@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         //userTitle.setTitle("Amit")
        // userEmail.setTitle("Amit")
 
-        binding.navView.findViewById<TextView>(R.id.versionInfo).text="Version ${BuildConfig.VERSION_NAME}"
+        binding.navView.findViewById<TextView>(R.id.versionInfo).text="App Version 1.0"//${BuildConfig.VERSION_NAME}"
         if(languageCode.equals("kn")){
             homeMenu.setTitle("ಮುಖ ಪುಟ")
             languageMenu.setTitle("ಭಾಷೆಯನ್ನು ಆರಿಸಿ")

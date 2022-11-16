@@ -55,7 +55,7 @@
       android:scrollbars="vertical|horizontal"
       app:transformation="centerInside"
       app:transformationGravity="auto"
-      app:alignment="center"
+      app:alignment="top"
       app:overScrollHorizontal="true"
       app:overScrollVertical="true"
       app:overPinchable="true"

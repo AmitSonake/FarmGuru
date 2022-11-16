@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dogs.util.SharedPreferencesHelper
 import com.farms.krushisanjivini.databinding.ScheduleListingdataItemBinding
 import com.farms.krushisanjivini.model.Schedules
+import java.text.SimpleDateFormat
 
 
 class SchedulesListAdapter(private val schedules: MutableList<Schedules>)
@@ -165,13 +166,17 @@ class SchedulesListAdapter(private val schedules: MutableList<Schedules>)
         /*holder.binding.cropSeasonValue.text = schedules[position].activeIngredients.toString()
         holder.binding.diseaseInfectionValue.text = schedules[position].diseaseInfection.toString()*/
         val date= schedules[position].scheduleDate
+        val parser =  SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        val formatter = SimpleDateFormat("dd MMMM yyyy")
+        val formattedDate = formatter.format(parser.parse(date))
+        println("$formattedDate")
         val  dateFormat =date.split("T")[0]
         if(SharedPreferencesHelper.invoke(holder.binding.root.context).getSelectedLanguage().equals("EN")){
             holder.binding.scheduleDateLabel.text ="Schedule Date:"
         }else{
             holder.binding.scheduleDateLabel.text ="ವೆಳಾಪಟ್ಟಿ ದಿನಾಂಕ:"
         }
-        holder.binding.scheduleDateValue.text =dateFormat
+        holder.binding.scheduleDateValue.text =formattedDate
 
     }
 
