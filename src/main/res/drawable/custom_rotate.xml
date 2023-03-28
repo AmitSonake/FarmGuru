@@ -1,5 +1,5 @@
 <rotate xmlns:android="http://schemas.android.com/apk/res/android"
-    android:drawable="@drawable/krushi_logos"
+    android:drawable="@drawable/krushi_splash"
     android:fillAfter="false"
     android:fromDegrees="0"
     android:interpolator="@android:anim/linear_interpolator"

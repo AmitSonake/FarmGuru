@@ -6,4 +6,10 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="schedule_text">15dip</dimen>
+    <dimen name="top_mar">8dip</dimen>
+
+    <dimen name="et_otp_width">40dp</dimen>
+    <dimen name="et_otp_height">40dp</dimen>
+    <dimen name="margin_right_otp">20dp</dimen>
+    <dimen name="subtitle">18sp</dimen>
 </resources>

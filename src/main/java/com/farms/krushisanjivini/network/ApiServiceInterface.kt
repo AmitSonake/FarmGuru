@@ -38,7 +38,8 @@ interface ApiServiceInterface {
     fun getSoilTypeByLangId(@Query("id") id : Int): Call<ResponseBody>
 
     @GET("GetCropSeasonsByLangId")
-    fun getCropSeasonsByLangId(@Query("id") id : Int): Call<ResponseBody>
+    fun getCropSeasonsByLangId(@Query("langid") id : Int,@Query("cropId") cropId : Int): Call<ResponseBody>
+    //fun getCropSeasonsByLangId(@Query("langId") langId : Int,@Query("cropId") cropId : Int): Call<ResponseBody>
 
     @GET("api/IrrigationSource")
     fun getIrrigationSource(): Call<ResponseBody>
@@ -62,11 +63,11 @@ interface ApiServiceInterface {
     @POST("api/Question")
     fun registerQuestion(@Field("QueId") QueId : Int,
                      @Field("UserId") UserId : String,
-                     @Field( "QueDateTime") QueDateTime : String,
-                     @Field( "QueText") QueText : String,
-                     @Field( "ImageUrl") ImageUrl : String,
-                     @Field( "VoiceUrl") VoiceUrl : String,
-                     @Field(  "AssignedTo") AssignedTo : String,
+                     @Field( "QueDateTime") QueDateTime : String?,
+                     @Field( "QueText") QueText : String?,
+                     @Field( "ImageUrl") ImageUrl : String?,
+                     @Field( "VoiceUrl") VoiceUrl : String?,
+                     @Field(  "AssignedTo") AssignedTo : String?,
                      @Field("Status") Status : String): Call<ResponseBody>
 
     @FormUrlEncoded
@@ -118,14 +119,27 @@ interface ApiServiceInterface {
     @GET("GetLastNotesByLangId")
     fun getLastNotesBylangID(@Query("langId") langId : Int,@Query("maxReadId") maxReadId : Int,
                              @Query("lastReadId") lastReadId : Int): Call<ResponseBody>
+    @GET("GetUpcomingWebinarsByLangId")
+    fun getWebinarsByLangId(@Query("langId") langId : Int): Call<ResponseBody>
+
+    @GET("GetServiceProvidersByLangId")
+    fun getServiceProvidersByLangId(@Query("langId") langId : Int): Call<ResponseBody>
+
+    @GET("GetDealersByLangId")
+    fun getAgreeInputDealersByLangId(@Query("langId") langId : Int): Call<ResponseBody>
 
     @FormUrlEncoded
-    @POST("api/Account/RegisterFarmer")
+    @POST("api/Account/RegisterFarmerWithOtp")
     fun registerUser(@Field("UserName") UserName : String,
                      @Field("Email") Email : String,
                      @Field("PhoneNumber") PhoneNumber : String,
                      @Field("Password") Password : String,
-                     @Field("ConfirmPassword") ConfirmPassword : String): Call<ResponseBody>
+                     @Field("ConfirmPassword") ConfirmPassword : String,
+                     @Field("OTP") OTP : String): Call<ResponseBody>
+
+   // @FormUrlEncoded
+    @POST("api/Account/sendRegOtp")
+    fun sendRegOtp(@Query("phno") phno : String):Call<ResponseBody>
 }
 
 

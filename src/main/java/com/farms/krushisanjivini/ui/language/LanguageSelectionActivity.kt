@@ -73,11 +73,17 @@ class LanguageSelectionActivity : AppCompatActivity() {
             finish()
         }
         binding.buttonEnglish.setOnClickListener {
-            binding.buttonEnglish.setBackgroundColor(Color.parseColor("#6200EA"))
-            binding.buttonEnglish.setTextColor(Color.parseColor("#FFFFFF"))
-            binding.buttonKannada.setTextColor(Color.parseColor("#000000"))
-            binding.buttonKannada.setBackgroundColor(Color.parseColor("#AAAAAA"))
-            binding.submitButton.setBackgroundColor(Color.parseColor("#6200EA"))
+            binding.btnEn.setBackgroundColor(Color.parseColor("#3F6750"))
+         //   binding.buttonEnglish.setTextColor(Color.parseColor("#FFFFFF"))
+           // binding.buttonKannada.setTextColor(Color.parseColor("#000000"))
+
+            binding.titleLabel.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.titleLabel1.setTextColor(Color.parseColor("#000000"))
+
+            binding.imageView.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.imageView1.setTextColor(Color.parseColor("#000000"))
+            binding.btnKn.setBackgroundColor(Color.parseColor("#FFFFFF"))
+            binding.submitButton.setBackgroundColor(Color.parseColor("#3F6750"))
             binding.submitButton.setTextColor(Color.parseColor("#FFFFFF"))
             langaugeCode= "EN"
             ///SharedPreferencesHelper.invoke(this).saveUserLanguage(langList.get(0).LangId)
@@ -85,11 +91,13 @@ class LanguageSelectionActivity : AppCompatActivity() {
         }
         binding.buttonKannada.setOnClickListener {
             langaugeCode= "kn"
-            binding.buttonKannada.setBackgroundColor(Color.parseColor("#6200EA"))
-            binding.buttonKannada.setTextColor(Color.parseColor("#FFFFFF"))
-            binding.buttonEnglish.setTextColor(Color.parseColor("#000000"))
-            binding.buttonEnglish.setBackgroundColor(Color.parseColor("#AAAAAA"))
-            binding.submitButton.setBackgroundColor(Color.parseColor("#6200EA"))
+            binding.btnKn.setBackgroundColor(Color.parseColor("#3F6750"))
+            binding.titleLabel1.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.titleLabel.setTextColor(Color.parseColor("#000000"))
+            binding.imageView1.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.imageView.setTextColor(Color.parseColor("#000000"))
+            binding.btnEn.setBackgroundColor(Color.parseColor("#FFFFFF"))
+            binding.submitButton.setBackgroundColor(Color.parseColor("#3F6750"))
             binding.submitButton.setTextColor(Color.parseColor("#FFFFFF"))
            // SharedPreferencesHelper.invoke(this).saveUserLanguage(langList.get(1).LangId)
             binding.submitButton.isEnabled=true

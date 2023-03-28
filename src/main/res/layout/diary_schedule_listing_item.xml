@@ -36,7 +36,8 @@
                     android:layout_marginBottom="2dip"
                     android:text=""
                     android:layout_alignParentTop="true"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -66,6 +67,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/purple_500"
                     android:textStyle="bold"
+                    android:textSize="16sp"
                     android:visibility="gone" />
 
                 <TextView
@@ -80,7 +82,8 @@
                     android:layout_marginBottom="2dip"
                     android:text=""
                     android:textColor="@color/black"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sub_title_label"
@@ -94,7 +97,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/after_pronningdays"
                     android:textColor="@color/purple_500"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sub_title_value"
@@ -107,7 +111,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sprayScheduleLabel"
@@ -122,7 +127,8 @@
                     android:text="@string/spray_schedule"
                     android:textColor="@color/purple_500"
                     android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sprayScheduleNoteValue"
@@ -137,7 +143,8 @@
                     android:background="@android:color/transparent"
                     android:text=""
                     android:textColor="@color/black"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/crop_season_label"
@@ -151,7 +158,8 @@
                     android:text="@string/active_ingredients"
                     android:textColor="@color/purple_500"
                     android:textStyle="bold"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/crop_season_value"
@@ -164,7 +172,8 @@
                     android:layout_marginBottom="2dip"
                     android:text=""
                     android:textColor="@color/black"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/diseaseInfection_label"
@@ -178,7 +187,8 @@
                     android:text="@string/disease_Infection"
                     android:textColor="@color/purple_500"
                     android:textStyle="bold"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/diseaseInfection_value"
@@ -192,7 +202,8 @@
                     android:layout_marginBottom="2dip"
                     android:text=""
                     android:textColor="@color/black"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sprayMedicineBrandLabel"
@@ -207,7 +218,8 @@
                     android:text="@string/medicine_details"
                     android:textColor="@color/purple_500"
                     android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sprayMedicineBrandLabelValue"
@@ -220,7 +232,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sprayIngredientsLabel"
@@ -234,7 +247,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/spray_ingredients"
                     android:textColor="@color/purple_500"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sprayIngredientsLabelValue"
@@ -247,7 +261,9 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    />
 
                 <TextView
                     android:id="@+id/sprayPurposeLabel"
@@ -261,7 +277,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/spray_purpose"
                     android:textColor="@color/purple_500"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sprayPurposeLabelValue"
@@ -274,7 +291,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/basalDoseNoteLabel"
@@ -288,7 +306,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/basal_dose_note"
                     android:textColor="@color/purple_500"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/basalDoseNoteLabelValue"
@@ -301,7 +320,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/basalDoseMedicineBrandLabel"
@@ -315,7 +335,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/basal_dose_medicine"
                     android:textColor="@color/purple_500"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/basalDoseMedicineBrandLabelValue"
@@ -328,7 +349,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/basalDoseIngredientsLabel"
@@ -342,7 +364,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/basal_ingredients"
                     android:textColor="@color/purple_500"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/basalDoseIngredientsLabelValue"
@@ -355,7 +378,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/basalDosePurposeLabel"
@@ -369,7 +393,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/basal_purpose"
                     android:textColor="@color/purple_500"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/basalDosePurposeLabelValue"
@@ -382,7 +407,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/noteIfAnyLabel"
@@ -396,7 +422,8 @@
                     android:layout_marginBottom="2dip"
                     android:text="@string/notes_data"
                     android:textColor="@color/purple_500"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/noteIfAnyLabelValue"
@@ -409,7 +436,8 @@
                     android:layout_marginEnd="10dip"
                     android:layout_marginBottom="2dip"
                     android:text=""
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/schedule_date_label"
@@ -424,7 +452,8 @@
                     android:text="@string/schedule_date"
                     android:textColor="@color/purple_500"
                     android:textStyle="bold"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/schedule_date_value1"
@@ -438,7 +467,8 @@
                     android:layout_marginBottom="2dip"
                     android:text=""
                     android:visibility="gone"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
 
             </RelativeLayout>

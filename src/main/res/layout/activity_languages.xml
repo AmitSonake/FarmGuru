@@ -20,11 +20,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dip"
-        android:background="@drawable/krushi_logos"
+        android:background="@drawable/krushi_splash"
         android:paddingBottom="50dip"
         android:visibility="gone">
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
@@ -34,8 +35,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-
-        >
+        android:background="@drawable/language_border">
 
         <TextView
             android:id="@+id/chooseLanguageLabel"
@@ -48,42 +48,109 @@
             android:textColor="@color/black"
             android:textSize="22sp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonEnglish"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/chooseLanguageLabel"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@android:color/darker_gray"
-            android:fontFamily="sans-serif"
-            android:text="ENGLISH"
-            android:textColor="@color/black"
-            android:textSize="26sp" />
+            android:padding="20dip"
+            android:weightSum="2">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonKannada"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:layout_below="@id/chooseLanguageLabel"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_toRightOf="@id/buttonEnglish"
-            android:background="@android:color/darker_gray"
-            android:fontFamily="sans-serif"
-            android:text="ಕನ್ನಡ"
-            android:textColor="@color/black"
-            android:textSize="26sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonEnglish"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/language_border"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/btn_en"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dip">
+
+                    <TextView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:gravity="center_horizontal"
+                        android:text="A"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        android:src="@drawable/a_lettr"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/titleLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="English"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonKannada"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_below="@id/chooseLanguageLabel"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@id/buttonEnglish"
+                android:layout_weight="1"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                android:background="@drawable/language_border"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/btn_kn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dip"
+                  >
+
+                    <TextView
+                        android:id="@+id/imageView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:gravity="center_horizontal"
+                        android:textSize="24sp"
+                        android:text="ಎ"
+                        android:textColor="@color/black"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/titleLabel1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="ಕನ್ನಡ"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/submitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/buttonKannada"
+            android:layout_below="@id/linear"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"

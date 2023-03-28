@@ -82,6 +82,7 @@ class MyDiaryScheduleActivity : AppCompatActivity() {
             userLangId=1
         }else {
             userLangId=2
+            supportActionBar?.title="ನನ್ನ ಡೈರಿ"
         }
         binding.progressbar.visibility = View.VISIBLE
             mApiService!!.getPlotDiary(plotId,userLangId).enqueue(object:

@@ -14,7 +14,7 @@ data class TokenResponse (
 
 data class CropResponse(
  val CropId: String,
- val CropName: String
+ val CropName: String,
 )
 
 data class SoilType(
@@ -101,7 +101,44 @@ data class Notes(
  var TransId :Int,
  var NoteId :Int,
  var LangId :Int,
- var NoteText :String?
+ var NoteText :String?,
+ var ImageUrl :String?
+)
+
+
+data class Webinars(
+ var WebinarId :Int,
+ var WebinarTitle :String,
+ var WebinarLink :String,
+ var WebinarDateTime :String?
+)
+
+data class ServiceProviders(
+ var TransId :Int,
+ var ServiceProviderId :Int,
+ var LangId :Int,
+ var ServiceProviderName :String?,
+ var Village :String?,
+ var PhNo :String?,
+ var Service :String?
+
+)
+
+data class Dealers(
+ var TransId :Int,
+ var DealerId :Int,
+ var LangId :Int,
+ var DealerName :String?,
+ var Address :String?,
+ var City :String?,
+ var Taluka :String?,
+ var District :String?,
+ var PhNo :String?
+
+)
+
+data class AddImageUrls(
+ var imageUrl:String?
 )
 
 

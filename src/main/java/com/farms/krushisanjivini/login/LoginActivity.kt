@@ -19,6 +19,7 @@ import com.farms.krushisanjivini.network.ApiServiceInterface
 import com.farms.krushisanjivini.ui.language.LanguageSelectionActivity
 import com.farms.krushisanjivini.ui.signup.SignupActivity
 import com.farms.krushisanjivini.utilities.CheckInternetConnection
+import com.farms.krushisanjivini.utilities.util.getProgressDrawable
 import com.google.gson.Gson
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -42,6 +43,9 @@ class LoginActivity : AppCompatActivity() {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(binding.root)
+        val progressDrawable =getProgressDrawable(this)
+        /*binding.SplashScreenImage.loadImage(
+            "https://firebasestorage.googleapis.com/v0/b/krushisanjivini-96d72.appspot.com/o/crop_images%2F48x48.png?alt=media&token=9792579c-8ecd-4b38-92bc-6c1b23ae979a", progressDrawable)*/
         if(SharedPreferencesHelper.invoke(this).getUserName().toString()!=null){
            var userID=SharedPreferencesHelper.invoke(this).getUserName().toString()
             if(userID.equals("null"))binding.loginEmail.text="".toEditable()
@@ -162,7 +166,7 @@ class LoginActivity : AppCompatActivity() {
         val accesToken:String? = topic!!.access_token
         println(accesToken)
         SharedPreferencesHelper.invoke(this).saveUserToken(accesToken)
-        SharedPreferencesHelper.invoke(this).saveUserName( userName)
+        SharedPreferencesHelper.invoke(this).saveUserName(userName)
         SharedPreferencesHelper.invoke(this).saveUserPassword( password)
        // SharedPreferencesHelper.invoke(this).saveUserLoggedIn(true)
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(ApiServiceInterface::class.java)

@@ -14,9 +14,9 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@drawable/krushi_logos"
+        android:icon="@drawable/krushi_splash"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/krushi_logos"
+        android:roundIcon="@drawable/krushi_splash"
         android:supportsRtl="true"
         android:theme="@style/Theme.FarmGuru"
         android:usesCleartextTraffic="true"
@@ -60,6 +60,19 @@
             android:exported="true"
             android:label="@string/schedule"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.knowledgebank.KnowledgeBankActivity"
+            android:exported="true"
+            android:label="@string/knowledge_bank"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.adds.AdvertisementsActivity"
+            android:exported="true"
+            android:label="@string/advertisement"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".utilities.AskQuestionActivity"
             android:exported="true"
@@ -134,6 +147,22 @@
             android:name=".ui.myplots.MyPlotListingActivity"
             android:exported="true"
             android:label="@string/my_plot_details"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.webinar.WebinarListingActivity"
+            android:exported="true"
+            android:label="@string/webinars"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.serviceproviders.ServiceProvidersListingActivity"
+            android:exported="true"
+            android:label="@string/service_providers"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.agreeinput.AgreeInputDealerActivity"
+            android:exported="true"
+            android:label="@string/agree_input"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.weather.WeatherActivity"

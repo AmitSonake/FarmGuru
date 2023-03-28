@@ -9,6 +9,7 @@ import com.example.dogs.util.SharedPreferencesHelper
 import com.farms.krushisanjivini.R
 import com.farms.krushisanjivini.adapters.NotificationListAdapter
 import com.farms.krushisanjivini.databinding.ActivityNotificationListingBinding
+import com.farms.krushisanjivini.model.AddImageUrls
 import com.farms.krushisanjivini.model.Notes
 import com.farms.krushisanjivini.network.ApiClient
 import com.farms.krushisanjivini.network.ApiServiceInterface
@@ -28,6 +29,8 @@ class NotificationListActivity : AppCompatActivity() {
     var userLanguageID:Int = 1
     private var notesNewID:Int = 0
     private var notesOldID:Int = 0
+    private val list: ArrayList<AddImageUrls>? =ArrayList<AddImageUrls>()
+    private var listOfImages: ArrayList<AddImageUrls>? =ArrayList<AddImageUrls>()
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -57,13 +60,12 @@ class NotificationListActivity : AppCompatActivity() {
         if (bundle!=null){
             val message = bundle.getString("LanguageCode") // 1
             languageCode=message
-            println("language Code = $message")
         }
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(ApiServiceInterface::class.java)
         //getPlotList()
         val networkStatus:Boolean= CheckInternetConnection.checkForInternet(this)
         if(networkStatus) {
-            getNotesList()
+           getNotesList()
         }else{
             CheckInternetConnection.showAlertDialog(resources.getString(R.string.network_info),this)
         }
@@ -97,7 +99,7 @@ class NotificationListActivity : AppCompatActivity() {
                         //SharedPreferencesHelper.invoke(this@NotificationListActivity).saveOldNoteID(notesNewID)
                         if(noteParsedList.size>0){
                             binding.plotsListRecyclerView.adapter = NotificationListAdapter(noteParsedList,languageCode)
-
+                            //loadImages(noteParsedList)
                         }
                     }else if(response.code()==401){
                         CheckInternetConnection.showSessionTimeOutDialog("User login session expired!!.",this@NotificationListActivity)
@@ -122,10 +124,13 @@ class NotificationListActivity : AppCompatActivity() {
             val noteId =jsonObj.optInt("NoteId")
             val langId =jsonObj.optInt("LangId")
             val noteText =jsonObj.optString("NoteText")
-            noteList.add(Notes(transId,noteId,langId,noteText))
+            val imageUrl =jsonObj.optString("ImageUrl")
+            noteList.add(Notes(transId,noteId,langId,noteText,imageUrl))
 
         }
 
         return noteList
     }
+
+
 }

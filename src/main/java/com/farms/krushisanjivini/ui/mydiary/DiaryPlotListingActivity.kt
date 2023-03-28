@@ -63,6 +63,7 @@ class DiaryPlotListingActivity : AppCompatActivity() {
         ZoomHelper.getInstance().isEnabled = true*/
         if(SharedPreferencesHelper.invoke(this).getSelectedLanguage().equals("kn")){
             userLanguageID =2
+            supportActionBar?.title="ನನ್ನ ಡೈರಿ"
         }else {
             userLanguageID =1
         }

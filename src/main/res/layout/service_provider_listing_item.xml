@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/list_color"
+    android:padding="10dp"
+    tools:context=".ui.myplots.MyPlotListingActivity">
+
+    <!--<androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="12dp"
+        app:cardCornerRadius="12dp"
+
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="20dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        >-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@color/browser_actions_bg_grey"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logo_imageview"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_gravity="left|center_horizontal"
+                android:src="@drawable/test_service" />
+
+            <TextView
+                android:id="@+id/service_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_horizontal"
+                android:layout_toRightOf="@id/logo_imageview"
+                android:fontFamily="@font/oswald_regular"
+                android:minWidth="125dp"
+                android:text=""
+
+                android:textColor="@color/purple_500"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/provider_title_label"
+                android:layout_toRightOf="@id/logo_imageview">
+                <TextView
+                    android:id="@+id/village_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/phoneno_label"
+                    android:fontFamily="@font/oswald_regular"
+                    android:gravity="center"
+                    android:minWidth="125dp"
+
+                    android:text=""
+
+                    android:textColor="@color/purple_500"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/phoneno_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+
+                    android:layout_gravity="center|center_horizontal"
+                    android:fontFamily="@font/oswald_regular"
+                    android:minWidth="125dp"
+
+
+                    android:text=""
+                    android:textColor="@color/purple_500"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/provider_title_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_label"
+                android:layout_toRightOf="@id/logo_imageview"
+                android:fontFamily="@font/oswald_regular"
+                android:minWidth="125dp"
+
+                android:text=""
+                android:textColor="@color/purple_500"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+
+        </RelativeLayout>
+
+   <!-- </androidx.cardview.widget.CardView>-->
+
+</RelativeLayout>

@@ -97,24 +97,27 @@ class ComplaintRegistrationActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if(SharedPreferencesHelper.invoke(this).getSelectedLanguage().equals("kn")){
             userLanguageID=2
-            binding.btnChoose.text="ಆಯ್ಕೆ ಮಾಡಿ"
-            binding.btnCapture.text="ಸೆರೆಹಿಡಿಯಿರಿ"
-            binding.btnRemove.text="ಅಳಿಸಿ"
+          //  binding.btnChoose.text="ಆಯ್ಕೆ ಮಾಡಿ"
+           // binding.btnCapture.text="ಸೆರೆಹಿಡಿಯಿರಿ"
+          //  binding.btnRemove.text="ಅಳಿಸಿ"
             //binding.labelStartRecording.text="ಧ್ವನಿಯನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಿ"
             //  binding.labelStopRecording.text="ರೆಕಾರ್ಡಿಂಗ್ ನಿಲ್ಲಿಸಿ"
             //  binding.labelPlayRecording.text="ಧ್ವನಿಯನ್ನು ಪ್ಲೇ ಮಾಡಿ"
             binding.submitButton.text="ಸಲ್ಲಿಸು"
             binding.commentsText.hint="ಕಾಮೆಂಟ್ ಇಲ್ಲಿ ಸೇರಿಸಿ"
+            supportActionBar?.title="ಪ್ರಶ್ನೆಯನ್ನು ಕೆಳಿರಿ"
         }else{
             userLanguageID=1
-            binding.btnChoose.text="Choose"
-            binding.btnCapture.text="Capture"
+           // binding.btnChoose.text="Choose"
+           // binding.btnCapture.text="Capture"
+
             // binding.labelStartRecording.text="Record Voice"
             // binding.labelStopRecording.text="Stop Recording"
             //binding.labelPlayRecording.text="Play Voice"
+
             binding.submitButton.text="Submit"
             binding.commentsText.hint="Add comment here"
-            binding.btnRemove.text="Delete"
+           // binding.btnRemove.text="Delete"
         }
         getPermissionToRecordAudio()
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(
@@ -220,16 +223,15 @@ class ComplaintRegistrationActivity : AppCompatActivity() {
     }
 
     private fun checkFieldValidation(): Boolean {
-        return !(binding.commentsText.text.toString().isNullOrEmpty()||
-                (imageUrl.isNullOrEmpty()||
-                audioUrl.isNullOrEmpty())
+        return !(
+                imageUrl.isNullOrEmpty()
                 )
     }
 
     private fun registerCompliant() {
         binding.progressbar.visibility = View.VISIBLE
        var questionText:String? = binding.commentsText.text.toString()
-        mApiService!!.registerQuestion(1,"1",currentDateTime!!,questionText!!,imageUrl!!,audioUrl!!,"","New")
+        mApiService!!.registerQuestion(1,"1",currentDateTime!!,questionText,imageUrl!!,audioUrl,"","New")
             .enqueue(object:
             Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {

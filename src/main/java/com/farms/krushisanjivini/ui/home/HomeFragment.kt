@@ -20,6 +20,7 @@ import com.farms.krushisanjivini.adapters.HomeSliderImageAdapter
 import com.farms.krushisanjivini.adapters.NotificationListAdapter
 import com.farms.krushisanjivini.databinding.FragmentDashbordBinding
 import com.farms.krushisanjivini.databinding.NewNotificationListingBinding
+import com.farms.krushisanjivini.model.AddImageUrls
 import com.farms.krushisanjivini.model.AppCurrentVersion
 import com.farms.krushisanjivini.model.HomeMenuItems
 import com.farms.krushisanjivini.model.Notes
@@ -53,6 +54,8 @@ class HomeFragment : Fragment() {
     private var currentAppVersion:String = "1"
     private var listIntValue=ArrayList<Int>()
     private var notesNewID:Int = 0
+    private val list: ArrayList<AddImageUrls>? =ArrayList<AddImageUrls>()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -76,6 +79,7 @@ class HomeFragment : Fragment() {
         setImageInSlider(imageList, binding.imageSlider)
 */
         if(SharedPreferencesHelper.invoke(root.context).getSelectedLanguage().equals("kn")) {
+            (activity as MainActivity).supportActionBar?.title = "ಮುಖ ಪುಟ"
             homeMenuList.add(HomeMenuItems("ನನ್ನ ತೋಟದ ಇವತ್ತಿನ ವೇಳಾಪಟ್ಟಿ"))
             homeMenuList.add(HomeMenuItems("ನಿಮ್ಮ ಪ್ರಶ್ನೆ ನಮ್ಮ ಉತ್ತರ"))
             homeMenuList.add(HomeMenuItems("ನನ್ನ ತೋಟದ ವಿವರಗಳು"))
@@ -84,14 +88,20 @@ class HomeFragment : Fragment() {
             homeMenuList.add(HomeMenuItems( "ಮಾಹಿತಿ ಬಂಡಾರ"))
            // homeMenuList.add(HomeMenuItems("ಪ್ರಸ್ತುತ ಬೆಳೆ ಅವಧಿ"))
             homeMenuList.add(HomeMenuItems("ರಸ ಗೊಬ್ಬರ ಪೊರೈಕೆದಾರರು"))
-            homeMenuList.add(HomeMenuItems("ಹವಾಮಾನ ವರದಿ"))
+            homeMenuList.add(HomeMenuItems("ಜಾಹೀರಾತು"))
             homeMenuList.add(HomeMenuItems("ವೆಬಿನಾರ"))
+
+
+
             homeMenuList.add(HomeMenuItems("ಸೇವೆ ಒದಗಿಸುವವರು"))
             homeMenuList.add(HomeMenuItems("ವಿಡಿಯೋಗಳು ನಿಮಗಾಗಿ"))
+            homeMenuList.add(HomeMenuItems("ಹವಾಮಾನ ವರದಿ"))
+
             userLanguageID=2
             languageCode="kn"
 
         }else{
+            (activity as MainActivity).supportActionBar?.title = "Home"
             homeMenuList.add(HomeMenuItems("My Plot Today’s Schedule"))
             homeMenuList.add(HomeMenuItems("Your Question Our Answer"))
             homeMenuList.add(HomeMenuItems("My Plot Details"))
@@ -100,10 +110,13 @@ class HomeFragment : Fragment() {
             homeMenuList.add(HomeMenuItems("Knowledge Bank"))
            // homeMenuList.add(HomeMenuItems("Present Crop Period"))
             homeMenuList.add(HomeMenuItems("Agri Input Dealer"))
-            homeMenuList.add(HomeMenuItems("Weather Report"))
+            homeMenuList.add(HomeMenuItems("Advertisement"))
+            //homeMenuList.add(HomeMenuItems("Weather Report"))
             homeMenuList.add(HomeMenuItems("Webinar"))
             homeMenuList.add(HomeMenuItems("Service Provider"))
             homeMenuList.add(HomeMenuItems("Videos For You"))
+            homeMenuList.add(HomeMenuItems("Weather Report"))
+
             userLanguageID=1
             languageCode="EN"
         }
@@ -120,9 +133,9 @@ class HomeFragment : Fragment() {
         var intArrayList: ArrayList<Int> = arrayListOf<Int>(R.drawable.sch,R.drawable.qa,
             R.drawable.cropss,R.drawable.my_diary,
             R.drawable.register_plot,R.drawable.knowledge_bank,
-            R.drawable.crop_period,R.drawable.agree_input,
-            R.drawable.weathr,R.drawable.webinar,
-            R.drawable.service,R.drawable.videos)
+            R.drawable.agree_input,R.drawable.test,
+            R.drawable.webinar,R.drawable.service,
+           /* R.drawable.service,*/R.drawable.videos,R.drawable.weathr)
 
         binding.recyclerView.adapter= HomeItemsAdapter(homeMenuList,intArrayList)
         val networkStatus:Boolean= CheckInternetConnection.checkForInternet(root.context)
@@ -208,6 +221,7 @@ class HomeFragment : Fragment() {
         imageSlider.startAutoCycle()
     }
 
+
     private fun fetchAppVersion(){
         binding.progressbar.visibility = View.VISIBLE
         mApiService!!.getAppCurrentVersion(
@@ -256,6 +270,10 @@ class HomeFragment : Fragment() {
                     val stringResponse = response.body()?.string()
                     println("$stringResponse")
                     noteParsedList= stringResponse?.let { parseJson(it) }!!
+                   /* noteParsedList.add(Notes(1,1,1,"Test"))
+                    if (list != null) {
+                        list.add(AddImageUrls("https://firebasestorage.googleapis.com/v0/b/krushisanjivini-96d72.appspot.com/o/adds%2Fadd.jpeg?alt=media&token=28eb6753-828c-4b9c-9e2a-ad29fa27b2b7"))
+                    }*/
                     if(noteParsedList.size>0)
                     showNotifications(activity as MainActivity,noteParsedList)
 
@@ -282,14 +300,18 @@ class HomeFragment : Fragment() {
             val noteId =jsonObj.optInt("NoteId")
             val langId =jsonObj.optInt("LangId")
             val noteText =jsonObj.optString("NoteText")
-            noteList.add(Notes(transId,noteId,langId,noteText))
+            val imageUrl =jsonObj.optString("ImageUrl")
+            noteList.add(Notes(transId,noteId,langId,noteText,imageUrl))
             listIntValue .add(noteId)
         }
 
         return noteList
     }
 
-    private fun showNotifications(context:Context,noteParsedList:ArrayList<Notes>){
+    private fun showNotifications(
+        context: Context,
+        noteParsedList: ArrayList<Notes>
+    ){
         val maxReadId: Int = listIntValue.maxOrNull() ?: 0
         val dialogBuilder = context?.let { Dialog(it) }
         val inflater = context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -301,7 +323,9 @@ class HomeFragment : Fragment() {
             binding.readAcceptButton.text="Yes I Have Read"
         }
        // if(noteParsedList.size>0){
-            binding.notesListRecyclerView.adapter = NotificationListAdapter(noteParsedList,languageCode)
+        binding.notesListRecyclerView.adapter = NotificationListAdapter(noteParsedList,languageCode)
+        //loadImages(binding.notesListRecyclerView)
+
         //}
         binding.readAcceptButton.setOnClickListener {
             SharedPreferencesHelper.invoke(it.context).saveNewNoteID(maxReadId)
@@ -311,6 +335,8 @@ class HomeFragment : Fragment() {
         dialogBuilder.show()
 
     }
+
+
 }
 
 

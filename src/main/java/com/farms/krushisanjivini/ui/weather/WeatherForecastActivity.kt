@@ -30,7 +30,9 @@ class WeatherForecastActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWeatherBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        getUsersCurrentLocation()
+       getUsersCurrentLocation()
+       // Toast.makeText(
+       //     this,"User Location =$userLocation", Toast.LENGTH_LONG).show()
     }
 
     private fun getUsersCurrentLocation() {
@@ -41,7 +43,8 @@ class WeatherForecastActivity : AppCompatActivity() {
             mApiService = ApiClient.getWeatherClient()!!.create(ApiServiceInterface::class.java)
             makeApiWeatherRequest(apiKey,userLocation,days)
 
-            println("userLocation =$userLocation")
+            //println("userLocation =$userLocation")
+
         }
 
     }
@@ -59,7 +62,7 @@ class WeatherForecastActivity : AppCompatActivity() {
                     val userAddress="${topic.location.name},${topic.location.region},${topic.location.country}"
                     binding.address.text=userAddress
                     binding.updatedAt.text=topic.current.last_updated
-                    topic.current.condition.icon
+                   // topic.current.condition.icon
                     binding.statusImage.loadImage(
                         topic.current.condition.icon,
                         getProgressDrawable(binding.statusImage.context))

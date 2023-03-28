@@ -30,7 +30,10 @@ class SplashActivity : AppCompatActivity() {
         // to send a message with a delayed time.
         Handler().postDelayed({
             //if(!SharedPreferencesHelper.invoke(this).getUserLoggedIn()!!){
-            if(SharedPreferencesHelper.invoke(this).getUserLoggedIn() == false){
+           /* if(SharedPreferencesHelper.invoke(this).getUserRegistered() == false){
+                val intent = Intent(this, SignupActivity::class.java)
+                startActivity(intent)
+            }else */if(SharedPreferencesHelper.invoke(this).getUserLoggedIn() == false){
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }

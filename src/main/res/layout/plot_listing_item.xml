@@ -28,12 +28,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:minWidth="125dp"
                 android:text="@string/farm_id"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
         <TextView
             android:id="@+id/farm_id_value"
@@ -41,11 +41,11 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:layout_gravity="left|center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/title_label"
             android:layout_marginBottom="20dp"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textStyle="normal"
             />
 
@@ -55,11 +55,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/farm_id_label"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/farmer_name"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 android:minWidth="125dp"/>
             <TextView
@@ -69,11 +69,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/title_label"
                 android:layout_marginBottom="20dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 />
 
@@ -83,11 +83,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title_label"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/farmer_address"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 android:minWidth="125dp"/>
             <TextView
@@ -97,11 +97,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/sub_title_label"
                 android:layout_marginBottom="20dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 />
 
@@ -111,12 +111,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sub_title_label"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:minWidth="125dp"
                 android:text="@string/crop_name"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -126,11 +126,11 @@
                 android:layout_below="@id/sub_title_label"
                 android:layout_gravity="left|center_horizontal"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:layout_toRightOf="@id/crop_variety_label"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -139,12 +139,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/crop_name_label"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:minWidth="125dp"
                 android:text="@string/crop_variety"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -154,11 +154,11 @@
                 android:layout_below="@id/crop_name_label"
                 android:layout_gravity="left|center_horizontal"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:layout_toRightOf="@id/crop_variety_label"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -167,11 +167,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/crop_variety_label"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/crop_season"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 android:minWidth="125dp"/>
             <TextView
@@ -181,11 +181,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/crop_season_label"
                 android:layout_marginBottom="20dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 />
 
@@ -195,11 +195,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/crop_season_label"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/crop_distance"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 android:minWidth="125dp"/>
             <TextView
@@ -209,11 +209,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/crop_distance_label"
                 android:layout_marginBottom="20dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 />
 
@@ -223,11 +223,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/crop_distance_label"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/age_of_plant"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 android:minWidth="125dp"/>
             <TextView
@@ -237,11 +237,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/plot_age_label"
                 android:layout_marginBottom="20dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 />
             <TextView
@@ -250,11 +250,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/plot_age_label"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/total_area"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 android:minWidth="125dp"/>
             <TextView
@@ -264,11 +264,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/plot_area_label"
                 android:layout_marginBottom="20dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 />
 
@@ -279,11 +279,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/plot_area_value"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/payment_status"
                 android:textColor="@color/purple_500"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 android:minWidth="125dp"/>
             <TextView
@@ -293,11 +293,11 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_gravity="left|center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/payment_status_label"
                 android:layout_marginBottom="20dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 />
             <ImageView

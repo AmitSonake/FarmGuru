@@ -26,6 +26,7 @@ class QuestionHomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if(SharedPreferencesHelper.invoke(this).getSelectedLanguage().equals("kn")){
+            supportActionBar?.title="ನಿಮ್ಮ ಪ್ರಶ್ನೆ ನಮ್ಮ ಉತ್ತರ"
             binding.buttonQuestion.text="ಪ್ರಶ್ನೆಯನ್ನು ಕೆಳಿರಿ"
             binding.buttonViewStatus.text="ಉತ್ತರವನ್ನು ನೋಡಿರಿ"
             binding.questionLabel.text="ನಿಮ್ಮ ತೋಟದಲ್ಲಿ ಎನಾದರು ಸಮಸ್ಯೆ ಕಂಡು ಬಂದಲ್ಲಿ ಪ್ರಶ್ನೆಯನ್ನು ಕೆಳಿರಿ ಮೇಲೆ ಕ್ಲಿಕ ಮಾಡಿ ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಕೆಳಬಹುದು."

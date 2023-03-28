@@ -44,10 +44,12 @@ class MyPlotActivity : AppCompatActivity() {
         val view =binding.root
         setContentView(view)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val bundle :Bundle ?=intent.extras
 
         if(SharedPreferencesHelper.invoke(this).getSelectedLanguage().equals("kn")){
             selectedLanguageId =2
+            supportActionBar?.title="ಬೆಳೆ ಆಯ್ಕೆ "
         }else {
             selectedLanguageId =1
         }

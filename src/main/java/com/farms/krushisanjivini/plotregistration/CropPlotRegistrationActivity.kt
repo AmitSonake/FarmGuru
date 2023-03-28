@@ -387,7 +387,7 @@ class CropPlotRegistrationActivity : AppCompatActivity() {
     }
 
     private fun fetchCropSeason(){
-        mApiService!!.getCropSeasonsByLangId(userLanguageID).enqueue(object:
+        mApiService!!.getCropSeasonsByLangId(userLanguageID,appPlotId!!.toInt()).enqueue(object:
             Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if(response.code()==200||response.code()==201|| response.code()==202){

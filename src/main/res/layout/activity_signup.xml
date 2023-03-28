@@ -35,10 +35,9 @@
     <!-- ALL THE REGISTER -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="270dip"
-
-        android:background="@drawable/krushi_logos"
-        android:paddingBottom="50dip">
+        android:layout_height="180dip"
+        android:background="@drawable/krushi_splash"
+        android:paddingBottom="20dip">
 
     </RelativeLayout>
 
@@ -46,20 +45,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingTop="5dip"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin">
 
+        <RelativeLayout
+            android:id="@+id/otptimerlayout"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_gravity="center|center_vertical"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/circular_text"
+            android:paddingBottom="20dip"
+            android:textColor="@color/white"
+            android:textSize="20dip"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/otptimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center|center_horizontal"
+                android:text="123"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22dip"
+                android:visibility="visible" />
+        </RelativeLayout>
         <!-- ENTER NAME -->
         <EditText
             android:id="@+id/register_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:hint="@string/name"
+            android:layout_marginTop="50dp"
+            android:hint="@string/farmr_name"
             android:inputType="text" />
 
         <!-- ENTER EMAIL -->
@@ -68,8 +91,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
-            android:visibility="gone"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:visibility="gone" />
 
         <!-- ENTER PASSWORD -->
         <EditText
@@ -84,7 +107,7 @@
             android:id="@+id/register_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/passWord"
+            android:hint="@string/passWorddigits"
             android:inputType="textPassword" />
 
         <EditText
@@ -94,8 +117,105 @@
             android:hint="@string/confirm_passWord"
             android:inputType="textPassword" />
 
-        <!-- BUTTON FOR START THE REGISTER -->
 
+        <!-- BUTTON FOR START THE REGISTER -->
+       <!-- <RelativeLayout
+            android:id="@+id/otptimerlayout"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_gravity="center|center_vertical"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/circular_text"
+            android:paddingBottom="20dip"
+            android:textColor="@color/white"
+            android:textSize="20dip"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/otptimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center|center_horizontal"
+                android:text="123"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22dip"
+                android:visibility="visible" />
+        </RelativeLayout>-->
+
+        <Button
+            android:id="@+id/btnsendOtp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/send_otp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/enter_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_otp"
+            android:inputType="textPassword"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/enter_otp_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30dip"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="8dp">
+
+            <EditText
+                android:id="@+id/otp_edit_text1"
+                android:layout_width="@dimen/et_otp_width"
+                android:layout_height="@dimen/et_otp_height"
+                android:layout_marginEnd="@dimen/margin_right_otp"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/otp_edit_text2"
+                android:layout_width="@dimen/et_otp_width"
+                android:layout_height="@dimen/et_otp_height"
+                android:layout_marginEnd="@dimen/margin_right_otp"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/otp_edit_text3"
+                android:layout_width="@dimen/et_otp_width"
+                android:layout_height="@dimen/et_otp_height"
+                android:layout_marginEnd="@dimen/margin_right_otp"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/otp_edit_text4"
+                android:layout_width="@dimen/et_otp_width"
+                android:layout_height="@dimen/et_otp_height"
+                android:layout_marginEnd="@dimen/margin_right_otp"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btRegistrarse"
@@ -103,8 +223,9 @@
             android:layout_height="wrap_content"
             android:text="@string/btRegister"
             android:textColor="@color/purple_500"
-            android:textSize="18sp" />
-
+            android:textSize="18sp"
+            android:layout_marginTop="30dip"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btnLinkToLogIn"
@@ -114,7 +235,8 @@
             android:text="@string/btn_link_to_login"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
 
 
     </LinearLayout>

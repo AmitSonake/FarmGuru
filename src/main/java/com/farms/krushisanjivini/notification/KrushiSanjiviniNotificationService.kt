@@ -40,7 +40,7 @@ class KrushiSanjiviniNotificationService: FirebaseMessagingService() {
         )
 
         val mBuilder: NotificationCompat.Builder = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.drawable.krushi_logos)
+            .setSmallIcon(R.drawable.krushi_splash)
             .setContentTitle(title)
             .setContentText(messageBody)
             .setPriority(NotificationCompat.PRIORITY_HIGH)

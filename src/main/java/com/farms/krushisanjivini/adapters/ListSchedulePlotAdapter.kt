@@ -18,6 +18,7 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 
 
 class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>,private var userLanguage:String?)
@@ -35,15 +36,25 @@ class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>,pr
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // display the current animal
         if(userLanguage.equals("kn")){
-            holder.binding.titleLabel.text="ರೈತರ ಹೆಸರು:"
-            holder.binding.subTitleLabel.text="ರೈತರ ವಿಳಾಸ:"
-            holder.binding.cropVarietyLabel.text="ಬೆಳೆ ಹೆಸರು:"
-            holder.binding.cropSeasonLabel.text="ಬೆಳೆ ಋತು:"
+            holder.binding.plotIdLabel.text="ತೋಟದ ಐಡಿ:"
+            holder.binding.cropNameLabel.text="ಬೆಳೆಯ ಹೆಸರು:"
+            holder.binding.cropVarietyLabel.text="ಬೇಳೆಯ ತಳಿ:"
+            holder.binding.pruningDateLabel.text="ದಿನಾಂಕವನ್ನು ಆರಿಸಿ:"
+            holder.binding.cropSeasonLabel.text="ಬೆಳೆಯ ಕಾಲ:"
             holder.binding.viewSchedule.text="ವೆಳಾಪಟ್ಟಿ ವಿಕ್ಷಿಸಿ"
-            holder.binding.buttonMakePayment.text="ಪಾವತಿ ಮಾಡಿ"
+          //  holder.binding.buttonMakePayment.text="ಪಾವತಿ ಮಾಡಿ"
         }
-        holder.binding.titleValue.text = plotsList[position].FarmerName
-        holder.binding.subTitleValue.text = plotsList[position].FarmerAddress
+        holder.binding.plotIdValue.text = plotsList[position].PlotID
+        holder.binding.cropNameValue.text = plotsList[position].Crop
+
+        val date= plotsList[position].PruningDate
+        val parser =  SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        val formatter = SimpleDateFormat("dd MMMM yyyy")
+        val formattedDate = formatter.format(parser.parse(date))
+        println("$formattedDate")
+        val  dateFormat =date.split("T")[0]
+
+        holder.binding.pruningDateValue.text = formattedDate
        /* if(plotsList[position].CropId.equals(1)){
             holder.binding.cropVarietyValue.text = "Grapes"
         }else if(plotsList[position].CropId.equals(2)){
@@ -61,7 +72,7 @@ class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>,pr
         }else{
             holder.binding.cropVarietyValue.text = "Soon..."
         }*/
-        holder.binding.cropVarietyValue.text =plotsList[position].Crop
+        holder.binding.cropVarietyValue.text =plotsList[position].CropVariety
         holder.binding.cropSeasonValue.text = plotsList[position].CropSeason
        /* if(plotsList[position].IsPaid==true){
             holder.binding.editFarm.visibility= View.VISIBLE
@@ -69,11 +80,11 @@ class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>,pr
             holder.binding.editFarm.visibility= View.GONE
         }*/
         holder.binding.deleteFarm.visibility=View.GONE
-      holder.binding.deleteFarm.setOnClickListener {
+     /* holder.binding.deleteFarm.setOnClickListener {
           var removePlotId =plotsList[position].RegId
             deleteUserPlot(removePlotId,it.context)
       }
-
+*/
         holder.binding.viewSchedule.setOnClickListener {
             var removePlotId =plotsList[position].RegId
             var isPaid :Boolean =plotsList[position].IsPaid
@@ -97,11 +108,11 @@ class ListSchedulePlotAdapter(private val plotsList: MutableList<PlotListing>,pr
 
            // overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
         }
-        holder.binding.buttonMakePayment.setOnClickListener {
+       /* holder.binding.buttonMakePayment.setOnClickListener {
           // makePayment(it.context as Activity)
             // overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
         }
-
+*/
     }
 
 

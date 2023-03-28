@@ -81,6 +81,7 @@ class MyScheduleActivity : AppCompatActivity() {
             userLangId=1
         }else {
             userLangId=2
+            supportActionBar?.title="ವೆಳಾಪಟ್ಟಿ"
         }
         binding.progressbar.visibility = View.VISIBLE
             mApiService!!.getSchedules(plotId,userLangId).enqueue(object:

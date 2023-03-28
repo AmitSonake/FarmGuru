@@ -23,6 +23,10 @@ class SharedPreferencesHelper {
 
         private const val NEW_READ_NOTE_ID = "new_note_id"
         private const val OLD_READ_NOTE_ID= "old_note_id"
+        private const val USER_REGISTERED ="Userregistered"
+
+        private const val IS_USER_PLOT_ACTIVE ="is_user_plot_active"
+        private const val IS_USER_HAVE_PLOT ="is_user_have_plot"
 
         @Volatile
         private var instance: SharedPreferencesHelper? = null
@@ -122,4 +126,26 @@ class SharedPreferencesHelper {
             putString(USER_PASSWORD, password)
         }
     }
+
+
+    fun saveUserRegistered(isActive: Boolean) {
+        prefs?.edit(commit = true){
+            putBoolean(USER_REGISTERED, isActive)
+        }
+    }
+    fun getUserRegistered()=prefs?.getBoolean(USER_REGISTERED,false)
+
+    fun saveIsUserPlotActive(isActive: Boolean) {
+        prefs?.edit(commit = true){
+            putBoolean(IS_USER_PLOT_ACTIVE, isActive)
+        }
+    }
+    fun getIsUserPlotActive()=prefs?.getBoolean(IS_USER_PLOT_ACTIVE,false)
+
+    fun saveIsUserHavePlot(isActive: Boolean) {
+        prefs?.edit(commit = true){
+            putBoolean(IS_USER_HAVE_PLOT, isActive)
+        }
+    }
+    fun getIsUserHavePlot()=prefs?.getBoolean(IS_USER_HAVE_PLOT,false)
 }

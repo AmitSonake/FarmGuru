@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.farms.krushisanjivini.R
 import com.farms.krushisanjivini.databinding.SelectCropItemBinding
 import com.farms.krushisanjivini.model.CropResponse
 import com.farms.krushisanjivini.plotregistration.CropPlotRegistrationActivity
@@ -30,7 +33,17 @@ class SelectCropAdapter(private val crops: MutableList<CropResponse>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // display the current animal
-       holder.binding.tvAnimal.text = crops[position].CropName
+        holder.binding.tvAnimal.text = crops[position].CropName
+        var cropid= crops[position].CropId
+        val imageUrl:String="https://webapi.krushisanjivini.com/images/crop$cropid.png"
+        val options = RequestOptions()
+            .placeholder(R.drawable.test)
+            .error(R.drawable.test)
+        Glide.with(holder.binding.root)
+            .setDefaultRequestOptions(options)
+            .load(imageUrl)
+            .into(holder.binding.cropImage)
+
         holder.binding.cardView.setOnClickListener {
             val intent = Intent(it.context,CropPlotRegistrationActivity::class.java)
             intent.putExtra("cropId",crops[position].CropId)

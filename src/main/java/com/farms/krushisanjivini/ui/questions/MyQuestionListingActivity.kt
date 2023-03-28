@@ -62,6 +62,7 @@ class MyQuestionListingActivity : AppCompatActivity() {
             userLangId=1
         }else {
             userLangId=2
+            supportActionBar?.title="ಪ್ರಶ್ನೆಯನ್ನು ಕೆಳಿರಿ"
         }
         mApiService = ApiClient.getClientRequest(SharedPreferencesHelper.invoke(this).getToken())!!.create(ApiServiceInterface::class.java)
        // getQuestionsListing()

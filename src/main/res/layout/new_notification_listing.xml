@@ -7,22 +7,24 @@
     android:background="@color/list_color"
     android:padding="10dip"
     tools:context=".notification.NotificationListActivity">
+
     <ImageView
-        android:foregroundGravity="center_horizontal|center"
         android:id="@+id/imageView"
         android:layout_width="100dip"
         android:layout_height="100dip"
-        android:visibility="visible"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/krushi_logos"
-        android:layout_gravity="center"/>
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:foregroundGravity="center_horizontal|center"
+        android:src="@drawable/krushi_splash"
+        android:visibility="visible" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notesListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <Button
         android:id="@+id/read_accept_button"

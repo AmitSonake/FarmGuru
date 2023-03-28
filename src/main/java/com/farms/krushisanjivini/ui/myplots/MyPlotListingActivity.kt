@@ -53,6 +53,7 @@ class MyPlotListingActivity : AppCompatActivity() {
         }
         if(SharedPreferencesHelper.invoke(this).getSelectedLanguage().equals("kn")){
             userLanguageID =2
+            supportActionBar?.title="ನನ್ನ ತೋಟದ ವಿವರಗಳು"
         }else {
             userLanguageID =1
         }

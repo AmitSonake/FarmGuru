@@ -54,12 +54,21 @@ class PlotListAdapter(private val plotsList: MutableList<PlotListing>, private v
         holder.binding.plotAgeValue.text = plotsList[position].PlotAge.toString()
         holder.binding.plotAreaValue.text = plotsList[position].PlotArea.toString()
         if(!plotsList[position].IsPaid){
+            if(userLanguage.equals("kn")){
             holder.binding.paymentStatusValue.text = "Pending"
+            }else{
+                holder.binding.paymentStatusValue.text = "Pending"
+            }
             holder.binding.paymentStatusValue.setTextColor(ContextCompat.getColor(holder.binding.root.context,
                 R.color.red_color))
         }
         else{
-            holder.binding.paymentStatusValue.text = "Done"
+            if(userLanguage.equals("kn")){
+                holder.binding.paymentStatusValue.text = "Done"
+            }else{
+                holder.binding.paymentStatusValue.text = "Done"
+            }
+
             holder.binding.paymentStatusValue.setTextColor(ContextCompat.getColor(holder.binding.root.context,
                 R.color.green_color))
         }

@@ -108,13 +108,27 @@ class DiarySchedulesListAdapter(private val schedules: MutableList<Schedules>)
         }
 
         if(SharedPreferencesHelper.invoke(holder.binding.root.context).getSelectedLanguage().equals("kn")){
-            holder.binding.titleLabel.text="ವೇಳಾಪಟ್ಟಿ ದಿನ"
+          /*  holder.binding.titleLabel.text="ವೇಳಾಪಟ್ಟಿ ದಿನ"
             // holder.binding.subTitleLabel.text="ಮೆಡಿಸಿನ್ ಬ್ರಾಂಡ್"
             holder.binding.sprayScheduleLabel.text="ಸ್ಪ್ರೇ ವೇಳಾಪಟ್ಟಿ"
             holder.binding.sprayMedicineBrandLabel.text="ಮೆಡಿಸಿನ್ ಬ್ರಾಂಡ್"
             holder.binding.sprayIngredientsLabel.text="ಪದಾರ್ಥಗಳು"
             holder.binding.sprayPurposeLabel.text="ಉದ್ದೇಶ"
             holder.binding.basalDoseNoteLabel.text="ತಳದ ಟಿಪ್ಪಣಿ"
+            holder.binding.basalDoseMedicineBrandLabel.text="ಗೊಬ್ಬರಗಳ ಹೆಸರು"
+            holder.binding.basalDoseIngredientsLabel.text="ಸಕ್ರಿಯ ಘಟಕ"
+            holder.binding.basalDosePurposeLabel.text="ಮೂಲ ಉದ್ದೇಶ"
+            holder.binding.noteIfAnyLabel.text="ಟಿಪ್ಪಣಿಗಳು"
+            holder.binding.scheduleDateLabel.text="ವೇಳಾಪಟ್ಟಿ ದಿನಾಂಕ"*/
+
+
+            holder.binding.titleLabel.text="ವೇಳಾಪಟ್ಟಿ ದಿನ"
+            // holder.binding.subTitleLabel.text="ಮೆಡಿಸಿನ್ ಬ್ರಾಂಡ್"
+            holder.binding.sprayScheduleLabel.text="ಸಿಂಪರಣೆಯ ವೆಳಾಪಟ್ಟಿ"
+            holder.binding.sprayMedicineBrandLabel.text="ಔಷಧಿಯ ಹೆಸರು"
+            holder.binding.sprayIngredientsLabel.text="ಸಕ್ರಿಯ ಘಟಕ"
+            holder.binding.sprayPurposeLabel.text="ಕಾರಣ ( ಉದ್ದೆಶ )"
+            holder.binding.basalDoseNoteLabel.text="ಗೊಬ್ಬರಗಳು "
             holder.binding.basalDoseMedicineBrandLabel.text="ಗೊಬ್ಬರಗಳ ಹೆಸರು"
             holder.binding.basalDoseIngredientsLabel.text="ಸಕ್ರಿಯ ಘಟಕ"
             holder.binding.basalDosePurposeLabel.text="ಮೂಲ ಉದ್ದೇಶ"
@@ -131,7 +145,7 @@ class DiarySchedulesListAdapter(private val schedules: MutableList<Schedules>)
             if(SharedPreferencesHelper.invoke(holder.binding.root.context).getSelectedLanguage().equals("EN")){
                 holder.binding.subTitleLabel.text ="After Prooning Days:"
             }else{
-                holder.binding.subTitleLabel.text ="ಪ್ರೂನಿಂಗ್ ದಿನಗಳ ನಂತರ:"
+                holder.binding.subTitleLabel.text ="ಚಾಟನಿಯಿಂದ ಇವತ್ತಿನ ದಿನ:"
             }
 
         }else if(schedules[position].afterProoningDtDays<0){

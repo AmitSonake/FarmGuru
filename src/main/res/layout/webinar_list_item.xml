@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context=".ui.myplots.MyPlotListingActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/browser_actions_bg_grey"
+            android:padding="10dp">
+            <!-- <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:background="@drawable/editext_border">-->
+
+            <ImageView
+                android:id="@+id/webinar_title_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald_regular"
+                android:gravity="center_horizontal"
+                android:minWidth="125dp"
+                android:src="@drawable/live"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/red_color"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+            <!-- </RelativeLayout>-->
+            <!-- <Button
+                android:id="@+id/web_link_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/webinar_date_label"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:minWidth="125dp"
+                android:text="Join"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+-->
+            <TextView
+                android:id="@+id/webinar_date_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/webinar_title_label"
+                android:fontFamily="@font/oswald_regular"
+                android:minWidth="125dp"
+                android:text="Date"
+                android:textAlignment="textStart"
+                android:textColor="@color/purple_500"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/webinar_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/webinar_date_label"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/oswald_regular"
+                android:minWidth="125dp"
+                android:text="Time"
+                android:textAlignment="textStart"
+                android:textColor="@color/purple_500"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/web_link_label"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_below="@id/webinar_time"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@android:color/holo_blue_light"
+                android:minWidth="125dp"
+                android:text="Join"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

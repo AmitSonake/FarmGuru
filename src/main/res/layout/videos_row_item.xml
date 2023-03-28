@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/list_color"
+    android:padding="10dp"
+    tools:context="ui.videos.VideosListingActivity">
+
+    <!--<androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="12dp"
+        app:cardCornerRadius="12dp"
+
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="20dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        >-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/browser_actions_bg_grey"
+        android:padding="5dp">
+
+        <VideoView
+            android:id="@+id/logo_videoview"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_gravity="left|center_horizontal"
+            android:src="@drawable/test_service" />
+
+        <TextView
+            android:id="@+id/video_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_horizontal"
+            android:layout_toRightOf="@id/logo_videoview"
+            android:fontFamily="@font/oswald_regular"
+            android:minWidth="125dp"
+            android:text=""
+            android:textColor="@color/purple_500"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    </RelativeLayout>
