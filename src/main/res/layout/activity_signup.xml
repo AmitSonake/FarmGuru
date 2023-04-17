@@ -160,6 +160,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_otp"
             android:inputType="textPassword"
+            android:maxLength="1"
             android:visibility="gone" />
 
         <LinearLayout
@@ -179,6 +180,7 @@
                 android:layout_marginEnd="@dimen/margin_right_otp"
                 android:imeOptions="actionNext"
                 android:inputType="number"
+                android:nextFocusDown="@id/otp_edit_text2"
                 android:maxLength="1"
                 android:textAlignment="center"
                 android:textColor="@color/black" />
@@ -190,6 +192,7 @@
                 android:layout_marginEnd="@dimen/margin_right_otp"
                 android:imeOptions="actionNext"
                 android:inputType="number"
+                android:nextFocusDown="@id/otp_edit_text3"
                 android:maxLength="1"
                 android:textAlignment="center"
                 android:textColor="@color/black" />
@@ -202,6 +205,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:maxLength="1"
+                android:nextFocusDown="@id/otp_edit_text4"
                 android:textAlignment="center"
                 android:textColor="@color/black" />
 
@@ -213,6 +217,7 @@
                 android:imeOptions="actionDone"
                 android:inputType="number"
                 android:maxLength="1"
+                android:nextFocusDown="@id/btRegistrarse"
                 android:textAlignment="center"
                 android:textColor="@color/black" />
         </LinearLayout>

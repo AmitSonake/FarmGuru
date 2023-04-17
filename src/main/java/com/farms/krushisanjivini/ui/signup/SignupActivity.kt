@@ -20,6 +20,12 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.text.Editable
+
+import android.text.TextWatcher
+
+
+
 
 
 class SignupActivity : AppCompatActivity() {
@@ -84,6 +90,64 @@ class SignupActivity : AppCompatActivity() {
             }
 
         }
+        binding.otpEditText1.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                if (s.length == 1) {
+                    binding.otpEditText2.requestFocus()
+                }
+            }
+
+            override fun beforeTextChanged(
+                s: CharSequence, start: Int, count: Int,
+                after: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                s: CharSequence, start: Int, before: Int,
+                count: Int
+            ) {
+            }
+        })
+
+        binding.otpEditText2.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                if (s.length == 1) {
+                    binding.otpEditText3.requestFocus()
+                }
+            }
+
+            override fun beforeTextChanged(
+                s: CharSequence, start: Int, count: Int,
+                after: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                s: CharSequence, start: Int, before: Int,
+                count: Int
+            ) {
+            }
+        })
+        binding.otpEditText3.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                if (s.length == 1) {
+                    binding.otpEditText4.requestFocus()
+                }
+            }
+
+            override fun beforeTextChanged(
+                s: CharSequence, start: Int, count: Int,
+                after: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                s: CharSequence, start: Int, before: Int,
+                count: Int
+            ) {
+            }
+        })
 
     }
 
