@@ -1,41 +1,54 @@
 package com.farms.krushisanjivini.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.farms.krushisanjivini.databinding.ServiceProviderListingItemBinding
-import com.farms.krushisanjivini.model.ServiceProviders
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.farms.krushisanjivini.R
+import com.farms.krushisanjivini.databinding.VideosRowItemBinding
+import com.farms.krushisanjivini.model.AddYoutubeUrls
 import com.farms.krushisanjivini.network.ApiServiceInterface
+import com.farms.krushisanjivini.ui.videos.VideoPreviewActivity
 
 
-class VideosListAdapter(private val providersList: MutableList<ServiceProviders>, private var userLanguage:String?)
+class VideosListAdapter(
+    private val videosList: MutableList<AddYoutubeUrls>,
+    private var userLanguage: String?,
+    private var userLanguageID: Int
+)
     : RecyclerView.Adapter<VideosListAdapter.ViewHolder>() {
     private var mApiService: ApiServiceInterface?= null
-   inner class ViewHolder(val binding: ServiceProviderListingItemBinding) : RecyclerView.ViewHolder(binding.root)
+   inner class ViewHolder(val binding: VideosRowItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding =ServiceProviderListingItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding =VideosRowItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.providerTitleLabel.text =providersList[position].ServiceProviderName
-       // holder.binding.villageLabel.text = providersList[position].Village
-        holder.binding.phonenoLabel.text = providersList[position].PhNo+" | "+""+providersList[position].Village
-        holder.binding.serviceLabel.text = providersList[position].Service
+        holder.binding.videoTitle.text =videosList[position].Title
+        holder.binding.videoDescription.text = videosList[position].Description
 
-       /* val imageUrl:String="https://webapi.krushisanjivini.com/images/service$cropid.png"
         val options = RequestOptions()
-            .placeholder(R.drawable.test)
-            .error(R.drawable.test)
+            .placeholder(R.drawable.ks)
+            .error(R.drawable.ks)
         Glide.with(holder.binding.root)
             .setDefaultRequestOptions(options)
-            .load(imageUrl)
-            .into(holder.binding.logoImageview)*/
+            .load(videosList[position].ThumbnailUrl)
+            .into(holder.binding.logoVideoview)
+
+        holder.binding.videoUrlLayout.setOnClickListener {
+            val intent = Intent(it.context, VideoPreviewActivity::class.java)
+            intent.putExtra("videoUrl", videosList[position].VideoUrlText)
+            ContextCompat.startActivity(it.context, intent, null)
+        }
     }
 
     override fun getItemCount(): Int {
-        return providersList.size
+        return videosList.size
     }
 
     override fun getItemId(position: Int): Long {

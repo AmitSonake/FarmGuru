@@ -56,6 +56,7 @@ class LoginActivity : AppCompatActivity() {
             if(userPassword.equals("null"))binding.loginPassword.text="".toEditable()
             else binding.loginPassword.text=userPassword.toEditable()
         }
+        SharedPreferencesHelper.invoke(this).saveIsUserPlotActive(false)
         if(SharedPreferencesHelper.invoke(this).getUserPassword()!=null){
             //binding.loginPassword.text=SharedPreferencesHelper.invoke(this).getUserPassword().toString()
         }

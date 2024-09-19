@@ -3,7 +3,6 @@ package com.farms.krushisanjivini.ui.mydiary
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dogs.util.SharedPreferencesHelper
 import com.farms.krushisanjivini.R
@@ -69,9 +68,9 @@ class MyDiaryScheduleActivity : AppCompatActivity() {
         }else{
             CheckInternetConnection.showAlertDialog(resources.getString(R.string.network_info),this)
         }
-        getWindow().setFlags(
+        /*getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE)
+            WindowManager.LayoutParams.FLAG_SECURE)*/
 
 
     }
@@ -127,10 +126,6 @@ class MyDiaryScheduleActivity : AppCompatActivity() {
             val scheduleDay =jsonObj.optInt("ScheduleDay")
             val afterProoningDtDays =jsonObj.optInt("AfterProoningDtDays")
             val scheduleTextString =jsonObj.optString("SprayScheduleNote")
-            /*  val schduleString:String=scheduleText.toString()
-              val resultString:String= *//*schduleString.replace("\n", " ")*//* schduleString.replace("\n", System.getProperty("line.separator"));
-
-            val scheduleTextString:String= resultString.replace("\r", " ")*/
             val sprayMedicineBrand =jsonObj.optString("SprayMedicineBrand")
             val sprayIngredients =jsonObj.optString("SprayIngredients")
             val sprayPurpose =jsonObj.optString("SprayPurpose")
@@ -141,26 +136,12 @@ class MyDiaryScheduleActivity : AppCompatActivity() {
             val noteIfAny =jsonObj.optString("NoteIfAny")
             val scheduleDate =jsonObj.optString("ScheduleDate")
             val statusFlag =jsonObj.optString("StatusFlag")
-
-
-            /* scheduleList.add(Schedules(scheduleRowId,cropId,scheduleDay,afterProoningDtDays,
-             medicineDetails,fertilizer,activeIngredients,diseaseInfection,phi,notes,scheduleDate,statusFlag))*/
-
             scheduleList.add(Schedules(scheduleRowId,cropId,cropVarietyId,langId,scheduleDay,afterProoningDtDays,
                 scheduleTextString,sprayMedicineBrand,sprayIngredients,sprayPurpose,
                 basalDoseNote,basalDoseMedicineBrand,basalDoseIngredients,basalDosePurpose,noteIfAny,scheduleDate,statusFlag))
-
         }
 
         return scheduleList
     }
 
-
-    /* private fun fromHtml(html: String?): Spanned? {
-         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-             Html.fromHtml(html, Html.FROM_HTML_MODE_COMPACT)
-         } else {
-             Html.fromHtml(html)
-         }
-     }*/
 }

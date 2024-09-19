@@ -235,7 +235,7 @@ class HomeFragment : Fragment() {
 
                     if(BuildConfig.VERSION_NAME.equals(currentAppVersion)){
                         getNotesList()
-                        //showSubscriptionAlert(activity as MainActivity,"Application update required")
+                        //showSubscriptionAlert(activity as MaAinActivity,"Application update required")
                     }else{
                         showSubscriptionAlert(activity as MainActivity,"Application update is required!! " +
                                 "Please install new update from google play store")

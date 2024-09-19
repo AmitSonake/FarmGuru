@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.aghajari.zoomhelper.ZoomHelper
 import com.example.dogs.util.SharedPreferencesHelper
@@ -52,15 +51,7 @@ class DiaryPlotListingActivity : AppCompatActivity() {
             println("language Code = $message")
 
         }
-       /* ZoomHelper.addZoomableView(binding.plotsListRecyclerView)
-        ZoomHelper.getInstance().minScale = 1f
-        ZoomHelper.getInstance().maxScale = Float.MAX_VALUE
-        ZoomHelper.getInstance().shadowColor = Color.BLACK
-        ZoomHelper.getInstance().maxShadowAlpha = 0.6f
-        ZoomHelper.getInstance().shadowAlphaFactory = 4F
-        ZoomHelper.getInstance().dismissDuration = 200
-        ZoomHelper.getInstance().layoutTheme = android.R.style.Theme_Translucent_NoTitleBar_Fullscreen
-        ZoomHelper.getInstance().isEnabled = true*/
+
         if(SharedPreferencesHelper.invoke(this).getSelectedLanguage().equals("kn")){
             userLanguageID =2
             supportActionBar?.title="ನನ್ನ ಡೈರಿ"
@@ -74,10 +65,9 @@ class DiaryPlotListingActivity : AppCompatActivity() {
         }else{
             CheckInternetConnection.showAlertDialog(resources.getString(R.string.network_info),this)
         }
-        getWindow().setFlags(
+       /* getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE)
-
+            WindowManager.LayoutParams.FLAG_SECURE)*/
     }
 
 
@@ -140,21 +130,15 @@ class DiaryPlotListingActivity : AppCompatActivity() {
             val plotAge =jsonObj.optInt("PlotAge")
             val plotArea =jsonObj.optInt("PlotArea")
             val isPaid =jsonObj.optBoolean("isPaid")
-            //val isTrial =jsonObj.optBoolean("isTrial")
-            //val regDate =jsonObj.optString("RegDate")
-
             plotList.add(PlotListing(regId,plotId,farmName,farmAddress,farmTaluqa,
                 farmDistrict,farmState,
                 crop,cropVariety,cropSeason,farmPruningDate,soilType,cropPurpose,cropDistance,
                 plotAge,plotArea,isPaid))
-
         }
-
         return plotList
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         return ZoomHelper.getInstance().dispatchTouchEvent(ev!!,this) || super.dispatchTouchEvent(ev)
     }
-
 }

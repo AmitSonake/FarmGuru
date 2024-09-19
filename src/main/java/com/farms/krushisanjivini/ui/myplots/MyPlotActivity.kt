@@ -28,6 +28,7 @@ class MyPlotActivity : AppCompatActivity() {
     private var cropParsedList = ArrayList<CropResponse>()
     var languageCode:String? ="EN"
     var selectedLanguageId :Int =0
+    var isFromVideoMenu:Boolean =false
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -46,6 +47,8 @@ class MyPlotActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val bundle :Bundle ?=intent.extras
+        isFromVideoMenu = intent.getBooleanExtra("IsFromVideoMenu",false)
+
 
         if(SharedPreferencesHelper.invoke(this).getSelectedLanguage().equals("kn")){
             selectedLanguageId =2
@@ -94,7 +97,7 @@ class MyPlotActivity : AppCompatActivity() {
                         println("$stringResponse")
                         cropParsedList= stringResponse?.let { parseJson(it.toString()) }!!
                         if(cropParsedList.size>0){
-                            binding.cropRecyclerView.adapter = SelectCropAdapter(cropParsedList)
+                            binding.cropRecyclerView.adapter = SelectCropAdapter(cropParsedList,isFromVideoMenu)
 
                         }else{
                             binding.noScheduleLabel.visibility = View.VISIBLE

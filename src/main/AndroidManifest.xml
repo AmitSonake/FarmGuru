@@ -39,7 +39,19 @@
             android:screenOrientation="portrait"
             android:label="@string/ask_question"
             android:exported="true" />
+        <activity
+            android:name=".ui.videos.VideoListActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/videos"
+            android:exported="true" />
 
+        <activity
+            android:name=".ui.videos.VideoPreviewActivity"
+            android:hardwareAccelerated="true"
+            android:label="@string/videos"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:theme="@style/Theme.FarmGuru.NoActionBar"
+            android:exported="true" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.farms.krushisanjivini.fileprovider"

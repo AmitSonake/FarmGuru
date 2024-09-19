@@ -132,7 +132,6 @@ class MyQuestionListingActivity : AppCompatActivity() {
             )
 
         }
-
         return questionList
     }
 }

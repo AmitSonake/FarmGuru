@@ -140,6 +140,13 @@ interface ApiServiceInterface {
    // @FormUrlEncoded
     @POST("api/Account/sendRegOtp")
     fun sendRegOtp(@Query("phno") phno : String):Call<ResponseBody>
+
+    @GET("GetVideoUrlsByLangIdPage")
+    fun getVideoUrlsByLangIdPage(@Query("langId") id : Int, @Query("cropId") cropId : Int,
+                                 @Query("pageIndex") pageIndex : Int,
+                                 @Query("pageSize") pageSize : Int,
+                                 @Query("Search_Data") Search_Data : String): Call<ResponseBody>
+
 }
 
 

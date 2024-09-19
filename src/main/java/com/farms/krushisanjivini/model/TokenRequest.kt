@@ -141,4 +141,19 @@ data class AddImageUrls(
  var imageUrl:String?
 )
 
+data class AddVideoUrl(
+ var videoUrl:String?
+)
+
+data class AddYoutubeUrls(
+ val TransId : Int,
+ val VideoUrlId : Int,
+ val VideoUrlText : String,
+ val ThumbnailUrl : String,
+ val LangId : Int,
+ val Title : String,
+ val Description : String,
+ val AllRecCount : Int,
+)
+
 

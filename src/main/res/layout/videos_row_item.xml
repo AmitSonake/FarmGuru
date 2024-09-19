@@ -6,43 +6,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/list_color"
     android:padding="10dp"
-    tools:context="ui.videos.VideosListingActivity">
+    tools:context="ui.videos.VideoPreviewActivity">
 
-    <!--<androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardElevation="12dp"
-        app:cardCornerRadius="12dp"
-
-        app:cardBackgroundColor="@color/white"
-        app:cardMaxElevation="20dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        >-->
     <RelativeLayout
+        android:id="@+id/videoUrlLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/browser_actions_bg_grey"
         android:padding="5dp">
-
-        <VideoView
-            android:id="@+id/logo_videoview"
+        <FrameLayout
+            android:id="@+id/videoThumbLayout"
             android:layout_width="100dip"
-            android:layout_height="100dip"
-            android:layout_gravity="left|center_horizontal"
-            android:src="@drawable/test_service" />
-
+            android:layout_height="120dip"
+            android:gravity="center">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo_videoview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:src="@drawable/ks" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logo_thumb"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:layout_gravity="center"
+                android:src="@drawable/thumb" />
+        </FrameLayout>
         <TextView
             android:id="@+id/video_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_horizontal"
-            android:layout_toRightOf="@id/logo_videoview"
+            android:layout_marginBottom="10dip"
+            android:layout_toRightOf="@id/videoThumbLayout"
             android:fontFamily="@font/oswald_regular"
             android:minWidth="125dp"
+            android:layout_marginLeft="10dip"
             android:text=""
             android:textColor="@color/purple_500"
-            android:textSize="18sp"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/video_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/video_title"
+            android:layout_gravity="left|center_horizontal"
+            android:layout_toRightOf="@id/videoThumbLayout"
+            android:fontFamily="@font/oswald_regular"
+            android:minWidth="125dp"
+            android:layout_marginLeft="10dip"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="14sp"
             android:textStyle="bold" />
     </RelativeLayout>
 

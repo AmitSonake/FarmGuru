@@ -44,7 +44,9 @@ class LogoutFragment : Fragment() {
         builder?.setTitle("Logout")
         builder?.setMessage("Are you sure you want to logout?")
         builder?.setPositiveButton(android.R.string.yes) { dialog, which ->
-            context?.let { SharedPreferencesHelper.invoke(it).saveUserLoggedIn(false) }
+            context?.let { SharedPreferencesHelper.invoke(it).saveUserLoggedIn(false)
+                SharedPreferencesHelper.invoke(it).saveIsUserPlotActive(false)
+            }
             startActivity(Intent(context, LoginActivity::class.java))
            activity?.finish()
         }

@@ -57,8 +57,10 @@ class HomeItemsAdapter(private val homeItemsList: MutableList<HomeMenuItems>,pri
                 }
 
             }else if(position==2){
-                val intent = Intent(Intent(it.context, MyPlotListingActivity::class.java))
-                ContextCompat.startActivity(it.context, intent, null)
+
+val intent = Intent(Intent(it.context, MyPlotListingActivity::class.java))
+                    ContextCompat.startActivity(it.context, intent, null)
+
             }else if(position==3){
                 if(SharedPreferencesHelper.invoke(it.context).getIsUserPlotActive() == true) {
                     val intent = Intent(Intent(it.context, DiaryPlotListingActivity::class.java))
@@ -69,6 +71,7 @@ class HomeItemsAdapter(private val homeItemsList: MutableList<HomeMenuItems>,pri
 
             }else if(position==4){
                 val intent = Intent(Intent(it.context, MyPlotActivity::class.java))
+                intent.putExtra("IsFromVideoMenu",false)
                 ContextCompat.startActivity(it.context, intent, null)
             }else if(position==5){
                 if(SharedPreferencesHelper.invoke(it.context).getIsUserPlotActive() == true) {
@@ -107,7 +110,14 @@ class HomeItemsAdapter(private val homeItemsList: MutableList<HomeMenuItems>,pri
                     showMessage(it.context)
                 }
             }else if(position==10){
-                showMessageSoon(it.context)
+                if(SharedPreferencesHelper.invoke(it.context).getIsUserPlotActive() == true) {
+                    val intent = Intent(Intent(it.context, MyPlotActivity::class.java))
+                    intent.putExtra("IsFromVideoMenu",true)
+                    ContextCompat.startActivity(it.context, intent, null)
+                }else{
+                    showMessage(it.context)
+                }
+
             }else if(position==11){
                 showMessageSoon(it.context)
             }else{
@@ -139,9 +149,9 @@ class HomeItemsAdapter(private val homeItemsList: MutableList<HomeMenuItems>,pri
 
     private fun showMessage(context: Context){
         if(SharedPreferencesHelper.invoke(context).getSelectedLanguage().equals("kn"))
-            showSubscriptionAlertReminder(context,"ಕ್ಷಮಿಸಿ, ನಿಮ್ಮ ತೋಟದ ಐಡಿ ಸಕ್ರಿಯ ಇಲ್ಲದ ಕಾರಣ ನಿವು ಕಂಪನಿಯ ಸಹಾಯವಾಣಿಗೆ ಕರೆ ಮಾಡಿಕೊಳ್ಳಿ -(+91 8352317645)")
+            showSubscriptionAlertReminder(context,"ಕ್ಷಮಿಸಿ, ನಿಮ್ಮ ತೋಟದ ಐಡಿ ಸಕ್ರಿಯ ಇಲ್ಲದ ಕಾರಣ ನಿವು ಕಂಪನಿಯ ಸಹಾಯವಾಣಿಗೆ ಕರೆ ಮಾಡಿಕೊಳ್ಳಿ -(+91 8951320059)")
         else
-            showSubscriptionAlertReminder(context,"Sorry,your plot is not active contact company customer care number(+91 8352317645)  ")
+            showSubscriptionAlertReminder(context,"Sorry,your plot is not active contact company customer care number(+91 8951320059)  ")
     }
 
     private fun showMessageSoon(context: Context){

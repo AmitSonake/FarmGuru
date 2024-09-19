@@ -11,9 +11,11 @@ import com.farms.krushisanjivini.R
 import com.farms.krushisanjivini.databinding.SelectCropItemBinding
 import com.farms.krushisanjivini.model.CropResponse
 import com.farms.krushisanjivini.plotregistration.CropPlotRegistrationActivity
+import com.farms.krushisanjivini.ui.videos.VideoListActivity
 
 
-class SelectCropAdapter(private val crops: MutableList<CropResponse>)
+class SelectCropAdapter(private val crops: MutableList<CropResponse>,
+                        private val isFromVideoMenu:Boolean)
     : RecyclerView.Adapter<SelectCropAdapter.ViewHolder>() {
 
    inner class ViewHolder(val binding: SelectCropItemBinding) : RecyclerView.ViewHolder(binding.root)
@@ -43,13 +45,22 @@ class SelectCropAdapter(private val crops: MutableList<CropResponse>)
             .setDefaultRequestOptions(options)
             .load(imageUrl)
             .into(holder.binding.cropImage)
-
-        holder.binding.cardView.setOnClickListener {
-            val intent = Intent(it.context,CropPlotRegistrationActivity::class.java)
-            intent.putExtra("cropId",crops[position].CropId)
-            intent.putExtra("cropName",crops[position].CropName)
-            startActivity(it.context,intent,null)
+        if(isFromVideoMenu) {
+            holder.binding.cardView.setOnClickListener {
+                val intent = Intent(it.context, VideoListActivity::class.java)
+                intent.putExtra("cropId", crops[position].CropId)
+                intent.putExtra("cropName", crops[position].CropName)
+                startActivity(it.context, intent, null)
+            }
+        }else{
+            holder.binding.cardView.setOnClickListener {
+                val intent = Intent(it.context,CropPlotRegistrationActivity::class.java)
+                intent.putExtra("cropId",crops[position].CropId)
+                intent.putExtra("cropName",crops[position].CropName)
+                startActivity(it.context,intent,null)
+            }
         }
+
 
     }
 
